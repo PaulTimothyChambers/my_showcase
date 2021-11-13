@@ -6,19 +6,14 @@ import QuizCenter from '../QuizCenter/QuizCenter';
 import Favourites from '../Favourites/Favourites';
 import LearningCenter from '../LearningCenter/LearningCenter';
 
+import appTextElements from './AppTextElements'
 import { loadQuizQuestions } from '../apiCalls/apiCalls';
-import '../styles/_App.scss';
+
+import title from './assets/title.png'
 
 class App extends Component {
   state = {
-    quizQuestions: [],
-    error: null
-  }
 
-  componentDidMount() {
-    loadQuizQuestions()
-      .then(data => this.setState({ quizQuestions: data.questionsList }))
-      .catch(error => this.setState({ error: error.message }))
   }
 
   render() {
@@ -29,29 +24,37 @@ class App extends Component {
             <>
               <Nav />
               <section className="welcome-text">
-                <p className="welcome-text__greeting"></p>
-                <p className="welcome-text__purpose"></p>
-                <p className="welcome-text__site-guide"></p>
+                <p className="welcome-text__title-one">How to</p>
+                <img className="welcome-text__logo" src={ title }/>
+                <p className="welcome-text__title-two">people</p>
+                <p className="welcome-text__greeting">{ appTextElements.greeting }</p>
+                <p className="welcome-text__time-insurance-policy">{ appTextElements.timeInsurancePolicy }</p>
+                <p className="welcome-text__purpose">{ appTextElements.purpose }</p>
+                <p className="welcome-text__site-guide">{ appTextElements.siteGuide }</p>
+                <p className="welcome-text__site-guide-learning-center">{ appTextElements.siteGuideLearningCenter }</p>
+                <p className="welcome-text__learning-center">{ appTextElements.learningCenter }</p>
+                <p className="welcome-text__site-guide-quiz-center">{ appTextElements.siteGuideQuizCenter }</p>
+                <p className="welcome-text__quiz-center">{ appTextElements.quizCenter }</p>
                 <p className="welcome-text__call-to-action"></p>
               </section>
             </>
           } />
 
-          <Route exact path='/learning_center' render={ () =>
+          <Route exact path='/learning_center' element={
             <>
               <Nav />
               <LearningCenter />
             </>
           } />
 
-          <Route exact path='/quiz_center' render={ () =>
+          <Route exact path='/quiz_center' element={
             <>
               <Nav />
-              <QuizCenter />
+              <QuizCenter questions={ this.state.quizQuestions }/>
             </>
           } />
 
-          <Route exact path='/favourites' render={ () =>
+          <Route exact path='/favourites' element={
             <>
               <Nav />
               <Favourites />
