@@ -2,45 +2,23 @@ import React, { Component } from 'react';
 
 class QuizForm extends Component {
   state = {
-    currentQuestionsList: this.props.quizQuestions,
-    nextQuestionsList: [],
     questionOne: '',
     questionTwo: '',
     questionThree: ''
   }
 
   newQuiz() {
-    const questions = this.state.currentQuestionsList;
-    console.log(questions)
-    console.log(this.state.nextQuestionsList)
-    if (this.state.currentQuestionsList.length) {
-      this.loadQuestions()
-
-    } else {
-      this.reloadQuizQuestions()
-      this.loadQuestions(questions)
-    }
-  }
-
-  loadQuestions(questions) {
+    const questions = this.props.quizQuestions;
     this.setState({
-      questionOne: this.getNewQuestion(questions),
-      questionTwo: this.getNewQuestion(questions),
-      questionThree: this.getNewQuestion(questions)
+      questionOne: this.getNewQuestion(),
+      questionTwo: this.getNewQuestion(),
+      questionThree: this.getNewQuestion()
     })
   }
 
-  reloadQuizQuestions(questions) {
-    this.setState({
-      currentQuestionsList: this.state.nextQuestionsList })
-  }
-
   getNewQuestion() {
-    const questions = this.state.currentQuestionsList;
+    const questions = this.props.quizQuestions;
     const question = questions[Math.floor(Math.random() * questions.length)];
-
-    this.state.nextQuestionsList.push(questions.splice(questions.indexOf(question), 1));
-    // need to flatten this array of arrays somehow 
     return question
   }
 
@@ -69,5 +47,26 @@ class QuizForm extends Component {
     )
   }
 }
+
+// nextQuestionsList: [],
+
+// if (this.state.currentQuestionsList.length) {}
+//
+// this.loadQuestions(questions)
+// loadQuestions(questions) {
+// }
+
+// } else {
+//   this.reloadQuizQuestions()
+//   this.loadQuestions(questions)
+// }
+
+// reloadQuizQuestions() {
+//   const next = this.state.nextQuestionsList
+//   this.setState({ currentQuestionsList: next })
+// }
+
+// this.state.nextQuestionsList.push(questions.splice(questions.indexOf(question), 1));
+// console.log(this.state.nextQuestionsList)
 
 export default QuizForm;
