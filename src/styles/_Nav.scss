@@ -1,0 +1,103 @@
+.nav-tabs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: fixed;
+  height: 14rem;
+  top: 1.4rem;
+}
+
+.home__text,
+.learning-center__text,
+.quiz-center__text,
+.favourites__text {
+  margin-left: 19rem;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.home__text {
+  margin: 0.6rem 0rem 0rem 19.1rem;
+  text-align: center;
+  color: white;
+  font-size: 23px;
+}
+
+.learning-center__text {
+  margin: 0.1rem 0rem 0rem 18.6rem;
+  font-size: 19px;
+  text-align: center;
+  color: white;
+}
+
+.quiz-center__text {
+  margin: 0.1rem 0rem 0rem 19rem;
+  text-align: center;
+  font-size: 19px;
+  color: white;
+}
+
+.favourites__text {
+  margin: 0.6rem 0rem 0rem 18.3rem;
+  text-align: center;
+  color: white;
+  font-size: 23px;
+}
+
+.navers {
+  display: flex;
+  flex-direction: row;
+  margin-left: -12rem;
+  height: 3rem;
+  width: 15rem;
+  background-color: darkgrey;
+  border-radius: 9px;
+  transition: margin-left;
+  transition-duration: .2s;
+  text-decoration: none;
+}
+
+.nav-tabs__home,
+.nav-tabs__learning-center,
+.nav-tabs__quiz-center,
+.nav-tabs__favourites {
+  display: flex;
+  flex-direction: row;
+  margin-left: -12rem;
+  height: 3rem;
+  width: 15rem;
+  background-color: darkgrey;
+  border-radius: 9px;
+}
+
+.home__icon,
+.learning-center__icon,
+.quiz-center__icon,
+.favourites__icon {
+  height: 30px;
+  width: 30px;
+}
+
+.home__icon {
+  margin: 9px 0px 0px 49px;
+}
+
+.learning-center__icon {
+  margin: 9px 0px 0px 40px;
+}
+
+.quiz-center__icon {
+  margin: 8px 0px 0px 46px;
+}
+
+.favourites__icon {
+  margin: 7px 0px 0px 19px;
+}
+
+.active {
+  background-color: darkgreen;
+  margin-left: -6rem;
+}
+
+.navers:hover {
+  margin-left: -6rem;
+}
