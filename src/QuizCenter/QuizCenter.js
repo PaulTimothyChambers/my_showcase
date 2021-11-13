@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { loadQuizQuestions } from '../apiCalls/apiCalls';
 import QuizForm from '../QuizForm/QuizForm'
-// import { Route } from 'react-router-dom';
 
 class QuizCenter extends Component {
   state = {

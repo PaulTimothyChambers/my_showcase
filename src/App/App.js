@@ -6,37 +6,50 @@ import QuizCenter from '../QuizCenter/QuizCenter';
 import Favourites from '../Favourites/Favourites';
 import LearningCenter from '../LearningCenter/LearningCenter';
 
-import appTextElements from './AppTextElements'
-import { loadQuizQuestions } from '../apiCalls/apiCalls';
+import { loadHomeText } from '../apiCalls/apiCalls';
 
 import title from './assets/title.png'
 
 class App extends Component {
   state = {
+    appTextElements: {},
+    error: null
+  }
 
+  componentDidMount() {
+    loadHomeText()
+      .then(data => this.setState({ appTextElements: data.appTextElements }))
+      .catch(error => this.setState({ error: error.message }))
   }
 
   render() {
+    const appTextElements = this.state.appTextElements;
     return (
       <main>
         <Routes>
           <Route exact path='/' element={
             <>
-              <Nav />
-              <section className="welcome-text">
-                <p className="welcome-text__title-one">How to</p>
-                <img className="welcome-text__logo" src={ title }/>
-                <p className="welcome-text__title-two">people</p>
-                <p className="welcome-text__greeting">{ appTextElements.greeting }</p>
-                <p className="welcome-text__time-insurance-policy">{ appTextElements.timeInsurancePolicy }</p>
-                <p className="welcome-text__purpose">{ appTextElements.purpose }</p>
-                <p className="welcome-text__site-guide">{ appTextElements.siteGuide }</p>
-                <p className="welcome-text__site-guide-learning-center">{ appTextElements.siteGuideLearningCenter }</p>
-                <p className="welcome-text__learning-center">{ appTextElements.learningCenter }</p>
-                <p className="welcome-text__site-guide-quiz-center">{ appTextElements.siteGuideQuizCenter }</p>
-                <p className="welcome-text__quiz-center">{ appTextElements.quizCenter }</p>
-                <p className="welcome-text__call-to-action"></p>
-              </section>
+              {
+                appTextElements &&
+                  <>
+                    <Nav />
+                    <section className="welcome-text">
+                      <h1 className="welcome-text__title-one">How to</h1>
+                      <img className="welcome-text__logo" src={ title }/>
+                      <h1 className="welcome-text__title-two">people</h1>
+                      <h2 className="welcome-text__greeting">{ appTextElements.greeting }</h2>
+                      <p className="welcome-text__purpose">{ appTextElements.purpose }</p>
+                      <p className="welcome-text__site-guide">{ appTextElements.siteGuide }</p>
+                      <h3 className="welcome-text__site-guide-learning-center">{ appTextElements.siteGuideLearningCenter }</h3>
+                      <p className="welcome-text__learning-center">{ appTextElements.learningCenter }</p>
+                      <h3 className="welcome-text__site-guide-quiz-center">{ appTextElements.siteGuideQuizCenter }</h3>
+                      <p className="welcome-text__quiz-center">{ appTextElements.quizCenter }</p>
+                      <h3 className="welcome-text__site-guide-favourites">{ appTextElements.siteGuideFavourites }</h3>
+                      <p className="welcome-text__favourites">{ appTextElements.favourites }</p>
+                      <h3 className="welcome-text__call-to-action">{ appTextElements.callToAction }</h3>
+                    </section>
+                  </>
+              }
             </>
           } />
 

@@ -7,11 +7,23 @@ const checkResponse = (response) => {
   return response.json()
 }
 
+function loadHomeText() {
+  return fetch(`${apiEndpoint}/api/v1/home`)
+  .then(response => checkResponse(response))
+}
+
+function loadLearningCenterText() {
+  return fetch(`${apiEndpoint}/api/v1/learning_center`)
+  .then(response => checkResponse(response))
+}
+
 function loadQuizQuestions() {
   return fetch(`${apiEndpoint}/api/v1/quiz_center`)
     .then(response => checkResponse(response))
 }
 
 export {
+  loadHomeText,
+  loadLearningCenterText,
   loadQuizQuestions
 }
