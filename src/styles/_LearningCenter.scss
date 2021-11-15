@@ -1,111 +1,41 @@
 .learning-center {
-  
+  height: 310vh;
+  margin: 5rem 13rem 0rem 15rem;
+  font-family: 'Source Serif Pro', serif;
+}
+
+.learning-center__icon-learning-center {
+  height: 50px;
+  width: 50px;
+  margin: 0.2rem 0rem 0rem -3.5rem;
+  position: absolute;
 }
 
 .learning-center__def-title {
+  font-size: 47px;
+}
 
+.learning-center__def,
+.learning-center__def-one,
+.learning-center__def-indent,
+.learning-center__tips,
+.learning-center__final-thoughts {
+  // margin-top: -1.7rem;
+  font-size: 16px;
+  margin-left: 25px;
+  margin-right: 45px;
 }
 
 .learning-center__def-one {
-
+  margin-top: -2rem;
 }
 
-.learning-center__def-two {
-
+.learning-center__def-indent {
+  margin-left: 45px;
 }
 
-.learning-center__def-three {
-
-}
-
-.learning-center__def-four {
-
-}
-
-.learning-center__def-five {
-
-}
-
-.learning-center__def-six {
-
-}
-
-.learning-center__def-seven {
-
-}
-
-.learning-center__def-eight {
-
-}
-
-.learning-center__def-nine {
-
-}
-
-.learning-center__def-ten {
-
-}
-
-.learning-center__def-eleven {
-
-}
-
-.learning-center__def-twelve {
-
-}
-
-.learning-center__def-thirteen {
-
-}
-
-.learning-center__def-fourteen {
-
-}
-
-.learning-center__def-fifteen {
-
-}
-
-.learning-center__def-sixteen {
-
-}
-
-.learning-center__tips-title {
-
-}
-
-.learning-center__tips-one {
-
-}
-
-.learning-center__tips-two {
-
-}
-
-.learning-center__tips-three {
-
-}
-
+.learning-center__tips-title,
 .learning-center__final-thoughts-title {
-
-}
-
-.learning-center__final-thoughts-one {
-
-}
-
-.learning-center__final-thoughts-two {
-
-}
-
-.learning-center__final-thoughts-three {
-
-}
-
-.learning-center__final-thoughts-four {
-
-}
-
-.learning-center__final-thoughts-five {
-
+  font-size: 27px;
+  margin-top: 4rem;
 }
