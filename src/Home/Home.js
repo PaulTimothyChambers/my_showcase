@@ -1,12 +1,13 @@
 import React from 'react';
 
-import title from '../App/assets/title.png';
-import author from '../App/assets/author.jpg';
+import title from './home-assets/title.png';
+import author from './home-assets/author.jpg';
 import learningIcon from '../App/Nav/nav-assets/learning-icon.png';
 import quizIcon from '../App/Nav/nav-assets/quiz-icon.png';
 import favouritesIcon from '../App/Nav/nav-assets/favourites-icon.png';
 
 const Home = ({ appTextElements }) => {
+
   return (
     <section className="welcome-text">
       <h1 className="welcome-text__title-one">I WANT TO</h1>
