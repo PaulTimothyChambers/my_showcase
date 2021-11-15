@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
 
-const RadioSelect = ({ question, isOpen, id }) => {
+import activeFavouriteIcon from '../quiz-assets/favourite-two.png';
+import inactiveFavouriteIcon from '../quiz-assets/favourite-one.png';
 
-    return (
-      <>
-        <input
-          type="radio"
-          className="quiz-board_option"
-          name={ `${id}` }
-          value="option"
-          // onChange={ event => handleChange(event, option, id) }
-        />
-        <label
-          className="quiz-board__label"
-        >
-          { `${question.question}` }
-        </label>
-      </>
-    )
+const RadioSelect = ({ question, id, isActive, toggleFavouriteIcon, option, optionString }) => {
+  // console.log(option)
+  return (
+    <div className="quiz-center__option">
+      <input
+        type="radio"
+        className="quiz-board_option"
+        name="option"
+        value="option"
+      />
+      {
+        !isActive &&
+          <img aria-label="button" className={`quiz-center__favourite-question-${optionString}`} src={ inactiveFavouriteIcon } onClick={ () => toggleFavouriteIcon(option, true, `${optionString}IsActive`) } />
+      }
+      {
+        isActive &&
+          <img aria-label="button" className={`quiz-center__favourite-question-${optionString}`} src={ activeFavouriteIcon } onClick={ () => toggleFavouriteIcon(option, false, `${optionString}IsActive`) } />
+      }
+      <label
+        className="quiz-board__label"
+      >
+        { `${question.question}` }
+      </label>
+    </div>
+  )
 
 }
 
