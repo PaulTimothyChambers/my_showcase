@@ -3,54 +3,73 @@ import RadioSelect from './RadioSelect/RadioSelect';
 
 class QuizForm extends Component {
   state = {
-    optionOne: {},
-    optionTwo: {},
-    questions: [],
-    answer: ''
+    optionOne: null,
+    optionTwo: null,
+    answer: '',
+    oneIsActive: false,
+    twoIsActive: false
   }
 
-  componentDidMount() {
-    this.newQuiz()
-  }
-
-  newQuiz() {
+  newQuiz = () => {
     this.clearAnswer()
+
     const questionOrder = [false, true];
     const topQuestion = questionOrder[Math.floor(Math.random() * questionOrder.length)];
-      if (topQuestion) {
-        this.setState({
-          optionOne: this.props.openQuestions[Math.floor(Math.random() * this.props.openQuestions.length)],
-          optionTwo: this.props.closedQuestions[Math.floor(Math.random() * this.props.closedQuestions.length)]
-        })
 
-      } else {
-        this.setState({
-          optionOne: this.props.closedQuestions[Math.floor(Math.random() * this.props.closedQuestions.length)],
-          optionTwo: this.props.openQuestions[Math.floor(Math.random() * this.props.openQuestions.length)]
-        })
-      }
+    if (topQuestion) {
+      this.setQuestions("optionOne", "optionTwo")
+
+    } else {
+      this.setQuestions("optionTwo", "optionOne")
+    }
   }
 
-  clearAnswer() {
+  setQuestions = (optionA, optionB) => {
+    this.setState({
+      [optionA]: this.props.closedQuestions[Math.floor(Math.random() * this.props.closedQuestions.length)],
+      [optionB]: this.props.openQuestions[Math.floor(Math.random() * this.props.openQuestions.length)]
+    })
+  }
+
+  clearAnswer = () => {
     this.setState({ answer: '' })
   }
 
-  checkAnswers(event) {
+  checkAnswers = (event, one, two) => {
     event.preventDefault()
-    if (event.target[0].checked && this.state.optionOne.isOpen) {
+
+    if (event.target[0].checked && one.isOpen) {
       this.setState({ answer: 'You got it!' })
-    } else if (event.target[1].checked && this.state.optionTwo.isOpen){
+
+    } else if (event.target[2].checked && two.isOpen){
       this.setState({ answer: 'You got it!' })
-    } else if (event.target[0].checked && !this.state.optionOne.isOpen){
-      this.setState({ answer: `That was a closed-ended question, as it can be answered in a short phrase/word ${this.state.optionOne.explanantion}` })
-    } else if (event.target[1].checked && !this.state.optionTwo.isOpen){
-      this.setState({ answer: `That was a closed-ended question, as it can be answered in a short phrase/word ${this.state.optionTwo.explanantion}` })
+
+    } else if (event.target[0].checked && !one.isOpen){
+      this.setState({ answer: `That was a closed-ended question, as it can be answered in a short phrase/word ${one.explanantion}` })
+
+    } else if (event.target[2].checked && !two.isOpen){
+      this.setState({ answer: `That was a closed-ended question, as it can be answered in a short phrase/word ${two.explanantion}` })
+    }
+  }
+
+  toggleFavouriteIcon = (option, bool, isActive) => {
+    this.setState({ [isActive]: bool })
+    // console.log(option)
+    if (!this.state[isActive]) {
+      this.props.favouriteQuestion(option)
+
+    } else {
+      this.props.deleteFavourite(option.id)
     }
   }
 
   render() {
     return (
       <>
+        {
+          !this.state.optionOne &&
+            <button className="quiz-center__begin-quiz" onClick={ () => this.newQuiz(this.props.quizQuestions) }>Get New Questions</button>
+        }
         {
           this.state.answer &&
             <section className="quiz-center__results">
@@ -59,25 +78,49 @@ class QuizForm extends Component {
             </section>
         }
         {
-          !this.state.answer &&
-            <form onSubmit={ event => this.checkAnswers(event) }>
+          this.state.optionOne &&
+            <form onSubmit={ event => this.checkAnswers(event, this.state.optionOne, this.state.optionTwo) }>
               <RadioSelect
                 key={ Date.now() }
                 question={ this.state.optionOne }
                 id={ this.state.optionOne.id }
+                isActive={ this.state.oneIsActive }
+                toggleFavouriteIcon={ this.toggleFavouriteIcon }
+                option={ this.state.optionOne }
+                optionString="one"
               />
               <RadioSelect
                 key={ Date.now() + 1 }
                 question={ this.state.optionTwo }
                 id={ this.state.optionTwo.id }
+                isActive={ this.state.twoIsActive }
+                toggleFavouriteIcon={ this.toggleFavouriteIcon }
+                option={ this.state.optionTwo }
+                optionString="two"
               />
-              <input type="submit" className="quiz-center__submit-button"/>
+              <input type="submit" className="quiz-center__submit-button" value="Submit Answer"/>
               <button className="quiz-center__begin-quiz" onClick={ () => this.newQuiz(this.props.quizQuestions) }>Get New Questions</button>
             </form>
         }
       </>
     )
   }
+  // {
+    //   !this.state.oneIsActive &&
+    //     <img aria-label="button" className="quiz-center__favourite-question-one" src={ inactiveFavouriteIcon } onClick={ () => this.toggleFavouriteIcon(this.state.optionOne, true, "oneIsActive") } />
+    // }
+    // {
+      //   this.state.oneIsActive &&
+      //     <img aria-label="button" className="quiz-center__favourite-question-one" src={ activeFavouriteIcon } onClick={ () => this.toggleFavouriteIcon(this.state.optionOne, false, "oneIsActive") } />
+      // }
+      // {
+        //   !this.state.twoIsActive &&
+        //     <img aria-label="button" className="quiz-center__favourite-question-two" src={ inactiveFavouriteIcon } onClick={ () => this.toggleFavouriteIcon(this.state.optionTwo, true, "twoIsActive") } />
+        // }
+        // {
+          //   this.state.twoIsActive &&
+          //     <img aria-label="button" className="quiz-center__favourite-question-two" src={ activeFavouriteIcon } onClick={ () => this.toggleFavouriteIcon(this.state.optionTwo, false, "twoIsActive") } />
+          // }
 
 
 
