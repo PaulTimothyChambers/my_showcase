@@ -37,24 +37,29 @@ class QuizForm extends Component {
 
   checkAnswers = (event, one, two) => {
     event.preventDefault()
+    console.log(event)
+    this.setState({
+      oneIsActive: false,
+      twoIsActive: false
+    })
 
     if (event.target[0].checked && one.isOpen) {
       this.setState({ answer: 'You got it!' })
 
-    } else if (event.target[2].checked && two.isOpen){
+    } else if (event.target[1].checked && two.isOpen){
       this.setState({ answer: 'You got it!' })
 
     } else if (event.target[0].checked && !one.isOpen){
       this.setState({ answer: `That was a closed-ended question, as it can be answered in a short phrase/word ${one.explanantion}` })
 
-    } else if (event.target[2].checked && !two.isOpen){
+    } else if (event.target[1].checked && !two.isOpen){
       this.setState({ answer: `That was a closed-ended question, as it can be answered in a short phrase/word ${two.explanantion}` })
     }
   }
 
   toggleFavouriteIcon = (option, bool, isActive) => {
     this.setState({ [isActive]: bool })
-    // console.log(option)
+
     if (!this.state[isActive]) {
       this.props.favouriteQuestion(option)
 
@@ -79,28 +84,33 @@ class QuizForm extends Component {
         }
         {
           this.state.optionOne &&
-            <form onSubmit={ event => this.checkAnswers(event, this.state.optionOne, this.state.optionTwo) }>
-              <RadioSelect
-                key={ Date.now() }
-                question={ this.state.optionOne }
-                id={ this.state.optionOne.id }
-                isActive={ this.state.oneIsActive }
-                toggleFavouriteIcon={ this.toggleFavouriteIcon }
-                option={ this.state.optionOne }
-                optionString="one"
-              />
-              <RadioSelect
-                key={ Date.now() + 1 }
-                question={ this.state.optionTwo }
-                id={ this.state.optionTwo.id }
-                isActive={ this.state.twoIsActive }
-                toggleFavouriteIcon={ this.toggleFavouriteIcon }
-                option={ this.state.optionTwo }
-                optionString="two"
-              />
-              <input type="submit" className="quiz-center__submit-button" value="Submit Answer"/>
-              <button className="quiz-center__begin-quiz" onClick={ () => this.newQuiz(this.props.quizQuestions) }>Get New Questions</button>
-            </form>
+            <>
+              {
+                !this.state.answer &&
+                  <form onSubmit={ event => this.checkAnswers(event, this.state.optionOne, this.state.optionTwo) }>
+                    <RadioSelect
+                      key={ Date.now() }
+                      question={ this.state.optionOne }
+                      id={ this.state.optionOne.id }
+                      isActive={ this.state.oneIsActive }
+                      toggleFavouriteIcon={ this.toggleFavouriteIcon }
+                      option={ this.state.optionOne }
+                      optionString="one"
+                    />
+                    <RadioSelect
+                      key={ Date.now() + 1 }
+                      question={ this.state.optionTwo }
+                      id={ this.state.optionTwo.id }
+                      isActive={ this.state.twoIsActive }
+                      toggleFavouriteIcon={ this.toggleFavouriteIcon }
+                      option={ this.state.optionTwo }
+                      optionString="two"
+                    />
+                    <input type="submit" className="quiz-center__submit-button" value="Submit Answer"/>
+                    <button className="quiz-center__begin-quiz" onClick={ () => this.newQuiz(this.props.quizQuestions) }>Get New Questions</button>
+                  </form>
+              }
+            </>
         }
       </>
     )

@@ -9,6 +9,8 @@ import LearningCenter from '../LearningCenter/LearningCenter';
 
 import { loadHomeText } from '../apiCalls/apiCalls';
 
+import bg5 from '../Home/home-assets/background-five.png'
+
 class App extends Component {
   constructor() {
     super()
@@ -35,7 +37,7 @@ class App extends Component {
         favouriteQuestions: [...this.state.favouriteQuestions, option]
       })
     }
-  } 
+  }
 
   deleteFavourite = (id) => {
     const filteredFavourites = this.state.favouriteQuestions.filter(question => {
@@ -48,6 +50,7 @@ class App extends Component {
     const appTextElements = this.state.appTextElements;
     return (
       <main>
+        <img className="background" src={ bg5 } />
         <Routes>
           <Route exact path='/' element={
             <>

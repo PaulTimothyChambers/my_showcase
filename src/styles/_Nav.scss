@@ -65,6 +65,8 @@
   margin-left: -12rem;
   height: 3rem;
   width: 15rem;
+  position: fixed;
+  z-index: 1;
   background-color: darkgrey;
   border-radius: 9px;
 }
@@ -94,10 +96,20 @@
 }
 
 .active {
-  background-color: darkgreen;
+  background-color: darkred;
   margin-left: -6rem;
 }
 
 .navers:hover {
   margin-left: -6rem;
+}
+
+.nav__back {
+  opacity: 35%;
+  width: 165px;
+  position: fixed;
+  z-index: -1;
+  margin-left: 289px;
+  margin-top: -20px;
+  height: 93px;
 }
