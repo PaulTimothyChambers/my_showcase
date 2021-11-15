@@ -4,21 +4,44 @@ import { Route, Routes } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import Home from '../Home/Home';
 import QuizCenter from '../QuizCenter/QuizCenter';
-import Favourites from '../Favourites/Favourites';
+import FavouritesContainer from '../FavouritesContainer/FavouritesContainer';
 import LearningCenter from '../LearningCenter/LearningCenter';
 
 import { loadHomeText } from '../apiCalls/apiCalls';
 
 class App extends Component {
-  state = {
-    appTextElements: {},
-    error: null
+  constructor() {
+    super()
+    this.state = {
+      appTextElements: {},
+      favouriteQuestions: [],
+      error: null
+    }
+    this.favouriteQuestion = this.favouriteQuestion.bind(this)
   }
 
   componentDidMount() {
     loadHomeText()
       .then(data => this.setState({ appTextElements: data.appTextElements }))
       .catch(error => this.setState({ error: error.message }))
+  }
+
+  favouriteQuestion = (option) => {
+    const filteredFavourites = this.state.favouriteQuestions.filter(question => {
+      return question.id === option.id
+    })
+    if (!filteredFavourites.length) {
+      this.setState({
+        favouriteQuestions: [...this.state.favouriteQuestions, option]
+      })
+    }
+  } 
+
+  deleteFavourite = (id) => {
+    const filteredFavourites = this.state.favouriteQuestions.filter(question => {
+      return question.id !== id
+    })
+    this.setState({ favouriteQuestions: filteredFavourites })
   }
 
   render() {
@@ -48,14 +71,14 @@ class App extends Component {
           <Route exact path='/quiz_center' element={
             <>
               <Nav />
-              <QuizCenter />
+              <QuizCenter favouriteQuestion={ this.favouriteQuestion } deleteFavourite={ this.deleteFavourite } />
             </>
           } />
 
           <Route exact path='/favourites' element={
             <>
               <Nav />
-              <Favourites />
+              <FavouritesContainer favouriteQuestions={ this.state.favouriteQuestions } deleteFavourite={ this.deleteFavourite } />
             </>
           } />
         </Routes>
