@@ -1,0 +1,77 @@
+.welcome-text {
+  font-family: 'Source Serif Pro', serif;
+  margin-left: 225px;
+  margin-right: 170px;
+  font-size: 23px;
+}
+
+.welcome-text__title-one {
+  margin: 3rem 0rem 0rem 0rem;
+  font-size: 56px;
+  -webkit-text-emphasis-style: double-circle;
+}
+
+.welcome-text__logo {
+  height: 10rem;
+}
+
+.welcome-text__author {
+  height: 27rem;
+  position: absolute;
+  margin: -5rem 0rem 0rem 11rem;
+  border-radius: 2rem;
+}
+
+.author-about__header {
+  position: absolute;
+  margin: 12.7rem 0rem 0rem 53rem;
+}
+
+.author-about__body {
+  position: absolute;
+  margin: 14.6rem 0rem 0rem 53.2rem;
+  width: 14rem;
+  text-align: center;
+  font-size: 13px;
+}
+
+.welcome-text__title-two {
+  margin: -1rem 0rem 0rem 28rem;
+  font-size: 56px;
+}
+
+.welcome-text__purpose {
+  font-size: 15px;
+  margin-left: 25px;
+  margin-right: 325px;
+}
+
+.welcome-text__site-guide,
+.welcome-text__call-to-action {
+  font-size: 19px;
+  margin-left: 10px;
+  margin-right: 33px;
+}
+
+.welcome-text__call-to-action {
+  margin-top: -2rem;
+}
+
+.welcome-text__site-guide-nav {
+  font-size: 36px;
+  margin-top: 3rem;
+}
+
+.welcome-text__tab {
+  margin-top: -1.7rem;
+  font-size: 16px;
+  margin-left: 25px;
+  margin-right: 45px;
+}
+
+.welcome-text__icon {
+  height: 50px;
+  width: 50px;
+  margin: -5.3rem 0rem 0rem -3.5rem;
+  position: absolute;
+}
