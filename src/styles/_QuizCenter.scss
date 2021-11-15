@@ -1,9 +1,29 @@
-.quiz-center__begin-quiz {
-  height: 30px;
-  width: 30px;
-  margin-left: 200px;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 .quiz-center {
   margin: 10rem 0rem 0rem 20rem;
+  font-family: 'Source Serif Pro', serif;
+}
+
+.quiz-center__header-text {
+  font-size: 48px;
+  margin: -6.9rem 0rem 0rem -5.5rem;
+}
+
+.quiz-center__subtitle {
+  margin: -0.8rem 0rem 0rem 14.5rem;
+  font-size: 5.4px;
+}
+
+.quiz-center__standby {
+  font-size: 17px;
+  margin: 1.7rem 0rem 0rem -2.5rem;
+}
+
+.quiz-center__option {
+  display: flex;
+  flex-direction: row;
 }
