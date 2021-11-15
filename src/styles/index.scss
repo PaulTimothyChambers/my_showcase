@@ -3,6 +3,10 @@
 @import '_QuizCenter';
 @import '_QuizForm';
 @import '_Home';
+@import '_FavouriteCard';
+@import '_FavouritesContainer';
+@import '_LearningCenter';
+@import '_RadioSelect';
 
 body {
   margin: 0;
@@ -11,6 +15,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 code {
