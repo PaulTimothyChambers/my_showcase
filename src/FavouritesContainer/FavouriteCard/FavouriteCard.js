@@ -8,9 +8,7 @@ const FavouriteCard = ({ favourite, id, deleteFavourite }) => {
       <button
         className="saved-question__delete-question"
         onClick={ () => deleteFavourite(id) }
-      >
-        Remove from Favourites
-      </button>
+      >Remove from Favourites</button>
     </div>
   )
 }

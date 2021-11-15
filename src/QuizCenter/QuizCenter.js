@@ -26,7 +26,7 @@ class QuizCenter extends Component {
             <section className="quiz-center">
               <h1 className="quiz-center__header-text">The QUIZ CENTER</h1>
               <h3 className="quiz-center__subtitle">(I'm secretly keeping score... 0_o)</h3>
-              <p className="quiz-center__standby">Note: Click the "Get New Questions" button (located below) at any time to obtain a new set of quiz questions.</p>
+              <p className="quiz-center__standby">Click the "Get New Questions" button (located below) at any time to obtain a new set of quiz questions:</p>
               <QuizForm
                 openQuestions={ this.state.openQuestions }
                 closedQuestions={ this.state.closedQuestions }
