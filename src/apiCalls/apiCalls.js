@@ -17,7 +17,7 @@ function loadLearningCenterText() {
   .then(response => checkResponse(response))
 }
 
-function loadQuizQuestions() {
+function loadQuestions() {
   return fetch(`${apiEndpoint}/api/v1/quiz_center`)
     .then(response => checkResponse(response))
 }
@@ -25,5 +25,5 @@ function loadQuizQuestions() {
 export {
   loadHomeText,
   loadLearningCenterText,
-  loadQuizQuestions
+  loadQuestions
 }
