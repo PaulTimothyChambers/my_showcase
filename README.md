@@ -1,6 +1,6 @@
 # My Showcase
 
-- [Front-End Deployment Link (see below for back-end setup)](https://my-showcase.surge.sh/)
+- [Deployment Link](https://this-showcase-for-me.surge.sh/)
 - [Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
 
 ## Contributors
@@ -44,13 +44,6 @@ Favourites:
 - NPM
 - JSX
 - HTML
-
-## Install/ Set Up Instructions
-
-### Backend Set Up
-
-1. Go to this [repository](https://github.com/PaulTimothyChambers/my-showcase-server)
-2. Follow Set Up instructions.
 
 ## Future Features
 
