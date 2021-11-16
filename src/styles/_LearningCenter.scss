@@ -5,10 +5,8 @@
 }
 
 .learning-center__icon-learning-center {
-  height: 50px;
-  width: 50px;
-  margin: 0.2rem 0rem 0rem -3.5rem;
-  position: absolute;
+  @include hei-wid(50px, 50px);
+  @include pos-marg(0.2rem 0rem 0rem -3.5rem);
 }
 
 .learning-center__def-title {
@@ -20,9 +18,8 @@
 .learning-center__def-indent,
 .learning-center__tips,
 .learning-center__final-thoughts {
+  @include marlef-marrig(25px, 45px);
   font-size: 16px;
-  margin-left: 25px;
-  margin-right: 45px;
 }
 
 .learning-center__def-one {
@@ -35,6 +32,5 @@
 
 .learning-center__tips-title,
 .learning-center__final-thoughts-title {
-  font-size: 27px;
-  margin-top: 4rem;
+  @include martop-fsize(27px, 4rem);
 }

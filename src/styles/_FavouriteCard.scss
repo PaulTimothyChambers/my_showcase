@@ -1,23 +1,19 @@
 .favourites__saved-question {
-  font-size: 18px;
-  margin: 3rem 0rem 0rem 1rem;
-  background-color: darkred;
-  color: white;
+  @include wid-mar-rad(18rem, 3rem 0rem 0rem 1rem, 20px)
   padding: 1rem;
-  border-radius: 20px;
-  width: 18rem;
+  background-color: darkred;
+  font-size: 18px;
+  color: white;
 }
 
 .saved-question__question {
-  width: 15rem;
   height: 5rem;
+  width: 15rem;
 }
 
 .saved-question__deco {
-  height: 10.6rem;
-  margin: -8.2rem 0rem 0rem 13rem;
-  border-radius: 20px;
   position: absolute;
-  width: 6rem;
+  height: 10.6rem;
+  @include hei-wid-mar-rad(10.6rem, 6rem, -8.2rem 0rem 0rem 13rem, 20px)
   opacity: 30%;
 }

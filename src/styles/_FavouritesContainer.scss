@@ -1,21 +1,26 @@
+@import '_mixins';
+
 .favourites {
+  @include dis-flexdir(row);
   position: absolute;
-  z-index: 1;
-  font-family: 'Source Serif Pro', serif;
   margin: 3rem 0rem 0rem 20rem;
-  flex-direction: column;
-  display: flex;
+  font-family: 'Source Serif Pro', serif;
+  z-index: 1;
 }
 
 .favourites__title {
-  font-size: 48px;
-  margin: 0rem 0rem 0rem -5.5rem;
+  @include mar-fsize(0rem 0rem 0rem -5.5rem, 48px);
 }
 
 .favourites__container {
-  display: flex;
-  flex-direction: row;
+  @include dis-flexdir(row);
   flex-wrap: wrap;
   width: 63rem;
   margin-left: -4rem;
+}
+
+.favourite-center__icon-favourite-center {
+  position: absolute;
+  @include hei-wid(50px, 50px)
+  margin: 0.2rem 0rem 0rem -9.3rem;
 }

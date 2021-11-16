@@ -1,0 +1,49 @@
+@mixin marlef-marrig($lef, $rig) {
+  margin-left: $lef;
+  margin-right: $rig;
+}
+
+@mixin martop-fsize($top, $size) {
+  margin-top: $top;
+  font-size: $size;
+}
+
+@mixin pos-marg($mar) {
+  position: absolute;
+  margin: $mar;
+}
+
+@mixin dis-flexdir($dir) {
+  display: flex;
+  flex-direction: $dir;
+}
+
+@mixin txtal-mar-fsize-col($mar, $fsize) {
+  text-align: center;
+  margin: $mar;
+  font-size: $fsize;
+  color: white;
+}
+
+@mixin hei-wid($hei, $wid) {
+  height: $hei;
+  width: $wid;
+}
+
+@mixin hei-wid-mar-rad($hei, $wid, $mar, $rad) {
+height: $hei;
+  width: $wid;
+  margin: $mar;
+  border-radius: $rad;
+}
+
+@mixin mar-fsize($mar, $size) {
+  margin: $mar;
+  font-size: $size;
+}
+
+@mixin wid-mar-rad($wid, $mar, $rad) {
+  width: $wid;
+  margin: $mar;
+  border-radius: $rad;
+}
