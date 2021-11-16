@@ -1,9 +1,23 @@
 .favourites__saved-question {
   font-size: 18px;
-  margin: 3rem 0rem 0rem 0rem;
+  margin: 3rem 0rem 0rem 1rem;
   background-color: darkred;
   color: white;
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 20px;
   width: 18rem;
+}
+
+.saved-question__question {
+  width: 15rem;
+  height: 5rem;
+}
+
+.saved-question__deco {
+  height: 10.6rem;
+  margin: -8.2rem 0rem 0rem 13rem;
+  border-radius: 20px;
+  position: absolute;
+  width: 6rem;
+  opacity: 30%;
 }
