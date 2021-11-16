@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import activeFavouriteIcon from '../quiz-assets/favourite-two.png';
 import inactiveFavouriteIcon from '../quiz-assets/favourite-one.png';

@@ -1,8 +1,8 @@
 const apiEndpoint = 'http://localhost:3001';
 
 const checkResponse = (response) => {
-  if (response.statusCode === 500) {
-    throw new Error("Error 500 - Server Error. Please try refreshing page.")
+  if (!response.ok) {
+    throw new Error("An error has occured. Please try refreshing the page.")
   }
   return response.json()
 }
