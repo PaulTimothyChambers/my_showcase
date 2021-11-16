@@ -17,7 +17,9 @@ const FavouritesContainer = ({ favouriteQuestions, deleteFavourite }) => {
   return (
     <section className="favourites">
       <h1 className="favourites__title">FAVOURITES</h1>
-      { favourites }
+      <div className="favourites__container">
+        { favourites }
+      </div>
     </section>
   )
 }

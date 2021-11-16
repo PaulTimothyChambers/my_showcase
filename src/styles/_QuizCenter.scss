@@ -1,16 +1,17 @@
 form {
   display: flex;
   flex-direction: column;
+  margin-top: 4rem;
 }
 
 .quiz-center {
-  margin: 10rem 0rem 0rem 20rem;
+  margin: 3rem 0rem 0rem 20rem;
   font-family: 'Source Serif Pro', serif;
 }
 
 .quiz-center__header-text {
   font-size: 48px;
-  margin: -6.9rem 0rem 0rem -5.5rem;
+  margin: 0rem 0rem 0rem -5.5rem;
 }
 
 .quiz-center__subtitle {
@@ -21,6 +22,7 @@ form {
 .quiz-center__standby {
   font-size: 17px;
   margin: 1.7rem 0rem 0rem -2.5rem;
+  width: 51rem;
 }
 
 .quiz-center__option {

@@ -6,8 +6,11 @@ import Home from '../Home/Home';
 import QuizCenter from '../QuizCenter/QuizCenter';
 import FavouritesContainer from '../FavouritesContainer/FavouritesContainer';
 import LearningCenter from '../LearningCenter/LearningCenter';
+import PageNotFound from '../PageNotFound/PageNotFound';
 
 import { loadHomeText } from '../apiCalls/apiCalls';
+
+import bg5 from '../Home/home-assets/background-five.png'
 
 class App extends Component {
   constructor() {
@@ -35,7 +38,7 @@ class App extends Component {
         favouriteQuestions: [...this.state.favouriteQuestions, option]
       })
     }
-  } 
+  }
 
   deleteFavourite = (id) => {
     const filteredFavourites = this.state.favouriteQuestions.filter(question => {
@@ -48,6 +51,7 @@ class App extends Component {
     const appTextElements = this.state.appTextElements;
     return (
       <main>
+        <img className="background" src={ bg5 } alt="a Japanese style mountain and sunset, with water below as the background"/>
         <Routes>
           <Route exact path='/' element={
             <>
@@ -80,6 +84,10 @@ class App extends Component {
               <Nav />
               <FavouritesContainer favouriteQuestions={ this.state.favouriteQuestions } deleteFavourite={ this.deleteFavourite } />
             </>
+          } />
+
+          <Route path="*" element={
+            <PageNotFound />
           } />
         </Routes>
       </main>

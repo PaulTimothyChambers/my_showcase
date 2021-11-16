@@ -10,16 +10,51 @@
   width: 75px;
 }
 
+.quiz-center__begin-quiz,
+.quiz-center__begin-quiz-quiz,
+.quiz-center__begin-quiz-answer,
 .quiz-center__submit-button {
-  margin: 3rem 0rem 0rem -2.2rem;
   height: 30px;
   width: 150px;
+  margin: 1rem 0rem 0rem -2.4rem;
   font-family: 'Source Serif Pro', serif;
+  background-color: darkred;
+  position: absolute;
+  z-index: 2;
+  border-radius: 10px;
+  border-style: none;
+  color: white;
 }
 
-.quiz-center__begin-quiz {
-  height: 30px;
-  width: 150px;
-  margin: -20.2rem 0rem 0rem -2.4rem;
-  font-family: 'Source Serif Pro', serif;
+.quiz-center__begin-quiz:active,
+.quiz-center__begin-quiz-answer:active,
+.quiz-center__begin-quiz-quiz:active,
+.quiz-center__submit-button:active {
+  border-color: yellow;
+  border-style: solid;
+  border-width: 2px;
+  color: yellow;
+}
+
+.quiz-center__begin-quiz-answer {
+  margin: -5rem 0rem 0rem -2.4rem;
+}
+
+.quiz-center__begin-quiz-quiz {
+  margin: -3rem 0rem 0rem -2.4rem;
+}
+
+.quiz-center__submit-button {
+  margin: 12rem 0rem 0rem -2.2rem;
+}
+
+.results__text {
+  margin: 6rem 0rem 0rem 0rem;
+  font-size: 34px;
+  width: 39.6rem;
+}
+
+.results__text-b {
+  font-size: 34px;
+  width: 34.6rem;
 }

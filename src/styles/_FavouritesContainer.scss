@@ -1,0 +1,21 @@
+.favourites {
+  position: absolute;
+  z-index: 1;
+  font-family: 'Source Serif Pro', serif;
+  margin: 3rem 0rem 0rem 20rem;
+  flex-direction: column;
+  display: flex;
+}
+
+.favourites__title {
+  font-size: 48px;
+  margin: 0rem 0rem 0rem -5.5rem;
+}
+
+.favourites__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 63rem;
+  margin-left: -4rem;
+}

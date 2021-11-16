@@ -24,7 +24,7 @@ class LearningCenter extends Component {
           learningCenterTextElements &&
             <>
               <article>
-                <img className="learning-center__icon-learning-center" src={ learningIcon }/>
+                <img className="learning-center__icon-learning-center" src={ learningIcon } alt="an icon with a light bulb on it repsenting the learning center" />
                 <h1 className="learning-center__def-title">HOW TO ASK OPEN-ENDED QUESTIONS</h1>
                 <p className="learning-center__def-one">{ learningCenterTextElements.definitionOne }</p>
                 <p className="learning-center__def-indent">{ learningCenterTextElements.definitionTwo }</p>
