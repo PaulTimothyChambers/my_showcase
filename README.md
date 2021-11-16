@@ -29,7 +29,7 @@ Favourites:
 
 ![favourites_view](https://i.imgur.com/DNtaQ91.png)
 
-![gif](https://gifyu.com/image/S2sop)
+![gif](https://gifyu.com/image/S2sop.gif)
 
 ## Technologies
 
