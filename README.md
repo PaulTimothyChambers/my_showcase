@@ -29,7 +29,7 @@ Favourites:
 
 ![favourites_view](https://i.imgur.com/DNtaQ91.png)
 
-![gif](https://i.imgur.com/eMOXG4I.gif)
+![gif](https://imgur.com/eMOXG4I.gif)
 
 ## Technologies
 
