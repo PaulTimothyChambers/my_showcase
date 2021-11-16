@@ -1,71 +1,59 @@
-# Getting Started with Create React App
+# My Showcase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Front-End Deployment Link (see below for back-end setup)](https://my-showcase.surge.sh/)
+- [Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
 
-## Available Scripts
+## Contributors
 
-In the project directory, you can run:
+- [Paul Chambers](https://github.com/PaulTimothyChambers)
 
-### `npm start`
+## Abstract
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This application is geared to equip isolated/lonely persons with an efficient tool for meaningful conversations with others, in the hopes of eventually establishing a deep, human connection. It trains the user is the art of asking open-ended questions, to better facilitate the flow of conversation for those who struggle in this regard.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Snapshots of Application
 
-### `npm test`
+Home:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![home_view](https://i.imgur.com/CzvOjH0.png)
 
-### `npm run build`
+Learning Center:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![learning_center_view](https://i.imgur.com/EFG5dtx.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Quiz Center:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![quiz_center_view](https://i.imgur.com/qlnGqwQ.png)
 
-### `npm run eject`
+Favourites:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![favourites_view](https://i.imgur.com/DNtaQ91.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![gif](showcase-gif (2).gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- React
+- Router
+- Express.js
+- Cypress
+- JavaScript
+- SCSS/CSS
+- Fetch API
+- Node.js
+- NPM
+- JSX
+- HTML
 
-## Learn More
+## Install/ Set Up Instructions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Backend Set Up
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Go to this [repository](https://github.com/PaulTimothyChambers/my-showcase-server)
+2. Follow Set Up instructions.
 
-### Code Splitting
+## Future Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# my_showcase
+- Embedded video tutorials for further training in asking open-ended questions
+- Integration of advanced AI chat-bot for practice asking open-ended questions
+- A build-your-own-conversation practice tool that enables the user to construct a generic conversation piece by piece, in order to see how the use of open-ended questions might be integrated into their own lives
