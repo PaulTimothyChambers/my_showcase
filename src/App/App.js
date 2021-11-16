@@ -10,17 +10,17 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 
 import { loadHomeText } from '../apiCalls/apiCalls';
 
-import bg5 from '../Home/home-assets/background-five.png'
+import bg5 from '../Home/home-assets/background-five.png';
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       appTextElements: {},
       favouriteQuestions: [],
       error: null
     }
-    this.favouriteQuestion = this.favouriteQuestion.bind(this)
+    this.favouriteQuestion = this.favouriteQuestion.bind(this);
   }
 
   componentDidMount() {
@@ -32,19 +32,19 @@ class App extends Component {
   favouriteQuestion = (option) => {
     const filteredFavourites = this.state.favouriteQuestions.filter(question => {
       return question.id === option.id
-    })
+    });
     if (!filteredFavourites.length) {
       this.setState({
         favouriteQuestions: [...this.state.favouriteQuestions, option]
-      })
+      });
     }
   }
 
   deleteFavourite = (id) => {
     const filteredFavourites = this.state.favouriteQuestions.filter(question => {
       return question.id !== id
-    })
-    this.setState({ favouriteQuestions: filteredFavourites })
+    });
+    this.setState({ favouriteQuestions: filteredFavourites });
   }
 
   render() {
@@ -80,10 +80,10 @@ class App extends Component {
           } />
 
           <Route exact path='/favourites' element={
-            <>
+            <section className="favourites-main">
               <Nav />
               <FavouritesContainer favouriteQuestions={ this.state.favouriteQuestions } deleteFavourite={ this.deleteFavourite } />
-            </>
+            </section>
           } />
 
           <Route path="*" element={

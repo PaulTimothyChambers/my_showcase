@@ -1,7 +1,8 @@
+@import '_mixins';
+
 .welcome-text {
+  @include marlef-marrig(225px, 170px);
   font-family: 'Source Serif Pro', serif;
-  margin-left: 225px;
-  margin-right: 170px;
   font-size: 23px;
 }
 
@@ -16,23 +17,20 @@
 }
 
 .welcome-text__author {
+  @include pos-mar(-15rem 0rem 0rem 51.8rem);
   height: 27rem;
-  position: absolute;
-  margin: -15rem 0rem 0rem 51.8rem;
   border-radius: 2rem;
 }
 
 .author-about__header {
-  position: absolute;
-  margin: 12.7rem 0rem 0rem 53rem;
+  @include pos-mar(12.7rem 0rem 0rem 53rem);
 }
 
 .author-about__body {
-  position: absolute;
-  margin: 14.6rem 0rem 0rem 53.2rem;
+  @include pos-mar(14.6rem 0rem 0rem 53.2rem);
   width: 14rem;
-  text-align: center;
   font-size: 13px;
+  text-align: center;
 }
 
 .welcome-text__title-two {
@@ -41,16 +39,14 @@
 }
 
 .welcome-text__purpose {
+  @include marlef-marrig(25px, 325px);
   font-size: 15px;
-  margin-left: 25px;
-  margin-right: 325px;
 }
 
 .welcome-text__site-guide,
 .welcome-text__call-to-action {
+  @include marlef-marrig(10px, 33px);
   font-size: 19px;
-  margin-left: 10px;
-  margin-right: 33px;
 }
 
 .welcome-text__call-to-action {
@@ -58,20 +54,15 @@
 }
 
 .welcome-text__site-guide-nav {
-  font-size: 36px;
-  margin-top: 3rem;
+  @include martop-fsize(3rem, 36px);
 }
 
 .welcome-text__tab {
-  margin-top: -1.7rem;
-  font-size: 16px;
-  margin-left: 25px;
-  margin-right: 45px;
+  @include martop-fsize(-1.7rem, 16px);
+  @include marlef-marrig(25px, 45px);
 }
 
 .welcome-text__icon {
-  height: 50px;
-  width: 50px;
-  margin: -5.3rem 0rem 0rem -3.5rem;
-  position: absolute;
+  @include pos-mar(-5.3rem 0rem 0rem -3.5rem);
+  @include hei-wid(50px, 50px);
 }

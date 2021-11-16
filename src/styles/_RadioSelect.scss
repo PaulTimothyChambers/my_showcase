@@ -4,14 +4,15 @@
 }
 
 .quiz-board_option {
-  margin: 3.7rem 0rem 0rem -4.2rem;
   position: absolute;
+  margin: 3.7rem 0rem 0rem -4.2rem;
 }
 
 .quiz-center__favourite-question-one,
 .quiz-center__favourite-question-two {
+  position: absolute;
+  @include hei-wid(35px, 35px);
   height: 35px;
   width: 35px;
-  position: absolute;
   margin: 3.1rem 0rem 0rem -7.6rem;
 }

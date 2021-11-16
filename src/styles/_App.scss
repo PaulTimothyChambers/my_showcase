@@ -1,12 +1,13 @@
 main {
+  @include hei-wid(200vh, 100vw);
   height: 200vh;
   width: 100vw;
-  background-color: #FCFDFD;
   margin-top: -1.7rem;
+  background-color: #FCFDFD;
 }
 
 .background {
   position: fixed;
-  z-index: 0;
   opacity: 15%;
+  z-index: 0;
 }

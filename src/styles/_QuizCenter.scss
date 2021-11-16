@@ -1,6 +1,7 @@
+@import '_mixins';
+
 form {
-  display: flex;
-  flex-direction: column;
+  @include dis-flexdir(column);
   margin-top: 4rem;
 }
 
@@ -10,8 +11,8 @@ form {
 }
 
 .quiz-center__header-text {
-  font-size: 48px;
   margin: 0rem 0rem 0rem -5.5rem;
+  font-size: 48px;
 }
 
 .quiz-center__subtitle {
@@ -20,12 +21,18 @@ form {
 }
 
 .quiz-center__standby {
-  font-size: 17px;
-  margin: 1.7rem 0rem 0rem -2.5rem;
   width: 51rem;
+  margin: 1.7rem 0rem 0rem -2.5rem;
+  font-size: 17px;
 }
 
 .quiz-center__option {
   display: flex;
   flex-direction: row;
+}
+
+.quiz-center__icon-quiz-center {
+  position: absolute;
+  @include hei-wid(50px, 50px);
+  margin: 0.2rem 0rem 0rem -9.1rem;
 }

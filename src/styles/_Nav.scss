@@ -1,6 +1,7 @@
+@import '_mixins';
+
 .nav-tabs {
-  display: flex;
-  flex-direction: column;
+  @include dis-flexdir(column);
   justify-content: space-around;
   position: fixed;
   height: 14rem;
@@ -16,39 +17,25 @@
 }
 
 .home__text {
-  margin: 0.6rem 0rem 0rem 19.1rem;
-  text-align: center;
-  color: white;
-  font-size: 23px;
+  @include txtal-mar-fsize-col(0.6rem 0rem 0rem 19.4rem, 23px);
 }
 
 .learning-center__text {
-  margin: 0.1rem 0rem 0rem 18.6rem;
-  font-size: 19px;
-  text-align: center;
-  color: white;
+  @include txtal-mar-fsize-col(0rem 0rem 0rem 18.9rem, 20px);
 }
 
 .quiz-center__text {
-  margin: 0.1rem 0rem 0rem 19rem;
-  text-align: center;
-  font-size: 19px;
-  color: white;
+  @include txtal-mar-fsize-col(0rem 0rem 0rem 19.2rem, 20px);
 }
 
 .favourites__text {
-  margin: 0.6rem 0rem 0rem 18.3rem;
-  text-align: center;
-  color: white;
-  font-size: 23px;
+  @include txtal-mar-fsize-col(0.6rem 0rem 0rem 18.4rem, 23px);
 }
 
 .navers {
-  display: flex;
-  flex-direction: row;
+  @include dis-flexdir(row);
+  @include hei-wid(3rem, 15rem);
   margin-left: -12rem;
-  height: 3rem;
-  width: 15rem;
   background-color: darkgrey;
   border-radius: 9px;
   transition: margin-left;
@@ -60,15 +47,13 @@
 .nav-tabs__learning-center,
 .nav-tabs__quiz-center,
 .nav-tabs__favourites {
-  display: flex;
-  flex-direction: row;
+  @include dis-flexdir(row);
+  @include hei-wid(3rem, 15rem);
   margin-left: -12rem;
-  height: 3rem;
-  width: 15rem;
   position: fixed;
-  z-index: 1;
   background-color: darkgrey;
   border-radius: 9px;
+  z-index: 1;
 }
 
 .home__icon,
@@ -80,15 +65,15 @@
 }
 
 .home__icon {
-  margin: 9px 0px 0px 49px;
+  margin: 9px 0px 0px 47px;
 }
 
 .learning-center__icon {
-  margin: 9px 0px 0px 40px;
+  margin: 9px 0px 0px 35px;
 }
 
 .quiz-center__icon {
-  margin: 8px 0px 0px 46px;
+  margin: 8px 0px 0px 43.2px;
 }
 
 .favourites__icon {
@@ -105,11 +90,10 @@
 }
 
 .nav__back {
-  opacity: 35%;
-  width: 165px;
   position: fixed;
-  z-index: -1;
-  margin-left: 289px;
+  @include hei-wid(93px, 165px);
   margin-top: -20px;
-  height: 93px;
+  margin-left: 289px;
+  opacity: 40%;
+  z-index: -1;
 }
