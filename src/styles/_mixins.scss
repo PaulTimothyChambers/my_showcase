@@ -8,7 +8,7 @@
   font-size: $size;
 }
 
-@mixin pos-marg($mar) {
+@mixin pos-mar($mar) {
   position: absolute;
   margin: $mar;
 }

@@ -17,19 +17,19 @@
 }
 
 .home__text {
-  @include txtal-mar-fsize-col(0.6rem 0rem 0rem 19.1rem, 23px);
+  @include txtal-mar-fsize-col(0.6rem 0rem 0rem 19.4rem, 23px);
 }
 
 .learning-center__text {
-  @include txtal-mar-fsize-col(0.6rem 0rem 0rem 19.1rem, 23px);
+  @include txtal-mar-fsize-col(0rem 0rem 0rem 18.9rem, 20px);
 }
 
 .quiz-center__text {
-  @include txtal-mar-fsize-col(0.6rem 0rem 0rem 19.1rem, 23px);
+  @include txtal-mar-fsize-col(0rem 0rem 0rem 19.2rem, 20px);
 }
 
 .favourites__text {
-  @include txtal-mar-fsize-col(0.6rem 0rem 0rem 19.1rem, 23px);
+  @include txtal-mar-fsize-col(0.6rem 0rem 0rem 18.4rem, 23px);
 }
 
 .navers {
@@ -65,15 +65,15 @@
 }
 
 .home__icon {
-  margin: 9px 0px 0px 49px;
+  margin: 9px 0px 0px 47px;
 }
 
 .learning-center__icon {
-  margin: 9px 0px 0px 40px;
+  margin: 9px 0px 0px 35px;
 }
 
 .quiz-center__icon {
-  margin: 8px 0px 0px 46px;
+  margin: 8px 0px 0px 43.2px;
 }
 
 .favourites__icon {
@@ -94,6 +94,6 @@
   @include hei-wid(93px, 165px);
   margin-top: -20px;
   margin-left: 289px;
-  opacity: 35%;
+  opacity: 40%;
   z-index: -1;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { loadQuestions } from '../apiCalls/apiCalls';
-import QuizForm from '../QuizForm/QuizForm'
+import QuizForm from '../QuizForm/QuizForm';
 
 import quizIcon from '../App/Nav/nav-assets/quiz-icon.png';
 

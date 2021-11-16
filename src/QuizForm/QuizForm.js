@@ -12,16 +12,16 @@ class QuizForm extends Component {
   }
 
   newQuiz = () => {
-    this.clearAnswer()
+    this.clearAnswer();
 
     const questionOrder = [false, true];
     const topQuestion = questionOrder[Math.floor(Math.random() * questionOrder.length)];
 
     if (topQuestion) {
-      this.setQuestions("optionOne", "optionTwo")
+      this.setQuestions("optionOne", "optionTwo");
 
     } else {
-      this.setQuestions("optionTwo", "optionOne")
+      this.setQuestions("optionTwo", "optionOne");
     }
   }
 
@@ -29,42 +29,42 @@ class QuizForm extends Component {
     this.setState({
       [optionA]: this.props.closedQuestions[Math.floor(Math.random() * this.props.closedQuestions.length)],
       [optionB]: this.props.openQuestions[Math.floor(Math.random() * this.props.openQuestions.length)]
-    })
+    });
   }
 
   clearAnswer = () => {
-    this.setState({ answer: '', answerB: '' })
+    this.setState({ answer: '', answerB: '' });
   }
 
   checkAnswers = (event, one, two) => {
-    event.preventDefault()
+    event.preventDefault();
     this.setState({
       oneIsActive: false,
       twoIsActive: false
-    })
+    });
 
     if (event.target[1].checked && one.isOpen) {
-      this.setState({ answer: 'Correct!' })
+      this.setState({ answer: 'Correct!' });
 
     } else if (event.target[2].checked && two.isOpen){
-      this.setState({ answer: 'Correct!' })
+      this.setState({ answer: 'Correct!' });
 
     } else if (event.target[1].checked && !one.isOpen){
-      this.setState({ answer: `"${one.question}":`, answerB: `${one.explanantion}` })
+      this.setState({ answer: `"${one.question}":`, answerB: `${one.explanantion}` });
 
     } else if (event.target[2].checked && !two.isOpen){
-      this.setState({ answer: `"${two.question}":`, answerB: `${two.explanantion}` })
+      this.setState({ answer: `"${two.question}":`, answerB: `${two.explanantion}` });
     }
   }
 
   toggleFavouriteIcon = (option, bool, isActive) => {
-    this.setState({ [isActive]: bool })
+    this.setState({ [isActive]: bool });
 
     if (!this.state[isActive]) {
-      this.props.favouriteQuestion(option)
+      this.props.favouriteQuestion(option);
 
     } else {
-      this.props.deleteFavourite(option.id)
+      this.props.deleteFavourite(option.id);
     }
   }
 

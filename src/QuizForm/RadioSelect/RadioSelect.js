@@ -8,7 +8,7 @@ const RadioSelect = ({ question, id, isActive, toggleFavouriteIcon, option, opti
   return (
     <div className="quiz-center__option">
       <input
-        id={ `${id}`  }
+        id={ `${id}` }
         type="radio"
         className="quiz-board_option"
         name="option"
@@ -18,7 +18,7 @@ const RadioSelect = ({ question, id, isActive, toggleFavouriteIcon, option, opti
         !isActive &&
           <img
             aria-label="button"
-            className={`quiz-center__favourite-question-${optionString}`}
+            className={ `quiz-center__favourite-question-${optionString}` }
             src={ inactiveFavouriteIcon }
             onClick={ () => toggleFavouriteIcon(option, true, `${optionString}IsActive`) }
           />
@@ -27,7 +27,7 @@ const RadioSelect = ({ question, id, isActive, toggleFavouriteIcon, option, opti
         isActive &&
           <img
             aria-label="button"
-            className={`quiz-center__favourite-question-${optionString}`}
+            className={ `quiz-center__favourite-question-${optionString}` } 
             src={ activeFavouriteIcon }
             onClick={ () => toggleFavouriteIcon(option, false, `${optionString}IsActive`) }
           />

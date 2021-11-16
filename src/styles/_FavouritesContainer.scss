@@ -8,19 +8,23 @@
   z-index: 1;
 }
 
+.favourites-main {
+  margin-top: 3rem;
+}
+
 .favourites__title {
-  @include mar-fsize(0rem 0rem 0rem -5.5rem, 48px);
+  @include mar-fsize(-3rem 0rem 0rem -5.5rem, 48px);
 }
 
 .favourites__container {
   @include dis-flexdir(row);
   flex-wrap: wrap;
   width: 63rem;
-  margin-left: -4rem;
+  margin-left: -16rem;
 }
 
 .favourite-center__icon-favourite-center {
   position: absolute;
-  @include hei-wid(50px, 50px)
-  margin: 0.2rem 0rem 0rem -9.3rem;
+  @include hei-wid(50px, 50px);
+  margin: -2.8rem 0rem 0rem -9.3rem;
 }

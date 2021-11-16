@@ -1,3 +1,5 @@
+@import '_mixins';
+
 .learning-center {
   height: 310vh;
   margin: 3rem 13rem 0rem 15rem;
@@ -6,7 +8,7 @@
 
 .learning-center__icon-learning-center {
   @include hei-wid(50px, 50px);
-  @include pos-marg(0.2rem 0rem 0rem -3.5rem);
+  @include pos-mar(0.2rem 0rem 0rem -3.5rem);
 }
 
 .learning-center__def-title {
@@ -32,5 +34,6 @@
 
 .learning-center__tips-title,
 .learning-center__final-thoughts-title {
-  @include martop-fsize(27px, 4rem);
+  @include martop-fsize(34px, 2.7rem);
+  margin-bottom: 13px;
 }

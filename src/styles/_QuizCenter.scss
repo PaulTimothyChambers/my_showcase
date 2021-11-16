@@ -33,6 +33,6 @@ form {
 
 .quiz-center__icon-quiz-center {
   position: absolute;
-  @include hei-wid(50px, 50px)
+  @include hei-wid(50px, 50px);
   margin: 0.2rem 0rem 0rem -9.1rem;
 }
