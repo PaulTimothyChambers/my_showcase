@@ -16,6 +16,13 @@
 .saved-question__deco {
   position: absolute;
   height: 10.6rem;
-  @include hei-wid-mar-rad(10.6rem, 6rem, -8.2rem 0rem 0rem 13rem, 20px);
+  @include hei-wid-mar-rad(10.8rem, 6rem, -8.3rem 0rem 0rem 2.9rem, 20px);
   opacity: 0.3;
+}
+
+.favourites__icon-favourites {
+  height: 90px;
+  margin-left: 6rem;
+  margin-top: -0.6rem;
+  position: absolute;
 }

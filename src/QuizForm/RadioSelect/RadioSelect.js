@@ -3,10 +3,10 @@ import React from 'react';
 import activeFavouriteIcon from '../quiz-assets/favourite-two.png';
 import inactiveFavouriteIcon from '../quiz-assets/favourite-one.png';
 
-const RadioSelect = ({ question, id, isActive, toggleFavouriteIcon, option, optionString }) => {
+const RadioSelect = ({ question, id, order, isActive, toggleFavouriteIcon, option, optionString }) => {
 
   return (
-    <div className="quiz-center__option">
+    <div className={ `quiz-center__option-${order}` }>
       <input
         id={ `${id}` }
         type="radio"
@@ -18,7 +18,7 @@ const RadioSelect = ({ question, id, isActive, toggleFavouriteIcon, option, opti
         !isActive &&
           <img
             aria-label="button"
-            className={ `quiz-center__favourite-question-${optionString}` }
+            className={ `quiz-center__favourite-question-${order}` }
             src={ inactiveFavouriteIcon }
             onClick={ () => toggleFavouriteIcon(option, true, `${optionString}IsActive`) }
           />
@@ -27,13 +27,13 @@ const RadioSelect = ({ question, id, isActive, toggleFavouriteIcon, option, opti
         isActive &&
           <img
             aria-label="button"
-            className={ `quiz-center__favourite-question-${optionString}` } 
+            className={ `quiz-center__favourite-question-${order}` }
             src={ activeFavouriteIcon }
             onClick={ () => toggleFavouriteIcon(option, false, `${optionString}IsActive`) }
           />
       }
       <label
-        className="quiz-board__label"
+        className={ `quiz-board__label-${order}` }
         htmlFor={ `${id}` }
       >
         { `${question.question}` }
