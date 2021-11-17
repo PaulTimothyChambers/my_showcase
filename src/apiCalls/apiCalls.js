@@ -1,4 +1,5 @@
 const apiEndpoint = 'https://my-better-showcase.herokuapp.com';
+// const apiEndpoint = 'http://localhost:3001';
 
 const checkResponse = (response) => {
   if (!response.ok) {
