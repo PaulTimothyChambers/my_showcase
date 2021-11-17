@@ -9,8 +9,7 @@ import LearningCenter from '../LearningCenter/LearningCenter';
 import PageNotFound from '../PageNotFound/PageNotFound';
 
 import { loadHomeText } from '../apiCalls/apiCalls';
-
-import bg5 from '../Home/home-assets/background-five.png';
+import bg5 from '../Home/home-assets/background-five.0e95ebd5.png'
 
 class App extends Component {
   constructor() {
@@ -18,6 +17,7 @@ class App extends Component {
     this.state = {
       appTextElements: {},
       favouriteQuestions: [],
+      assets: null,
       error: null
     }
     this.favouriteQuestion = this.favouriteQuestion.bind(this);
@@ -28,6 +28,15 @@ class App extends Component {
       .then(data => this.setState({ appTextElements: data.appTextElements }))
       .catch(error => this.setState({ error: error.message }))
   }
+
+  // getAssets = (dataOne) => {
+  //   loadImages()
+  //   .then(data => console.log(data))
+      // .then(data => this.setState({
+      //   appTextElements: dataOne.appTextElements,
+      //   assets: data
+      // }))
+  // }
 
   favouriteQuestion = (option) => {
     const filteredFavourites = this.state.favouriteQuestions.filter(question => {
@@ -51,7 +60,7 @@ class App extends Component {
     const appTextElements = this.state.appTextElements;
     return (
       <main>
-        <img className="background" src={ bg5 } alt="a Japanese style mountain and sunset, with water below as the background"/>
+        <img className="home-bg" src={ bg5 } />
         <Routes>
           <Route exact path='/' element={
             <>
@@ -87,7 +96,9 @@ class App extends Component {
           } />
 
           <Route path="*" element={
-            <PageNotFound />
+            <>
+              <PageNotFound />
+            </>
           } />
         </Routes>
       </main>

@@ -5,7 +5,7 @@ import homeIcon from './nav-assets/home-icon.png';
 import learningIcon from './nav-assets/learning-icon.png';
 import quizIcon from './nav-assets/quiz-icon.png';
 import favouritesIcon from './nav-assets/favourites-icon.png';
-import navBack from './nav-assets/nav-back.png';
+import navBack from './nav-assets/nav-back.33fb824e.png';
 
 const Nav = () => {
 
