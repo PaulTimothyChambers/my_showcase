@@ -8,14 +8,15 @@
 .quiz-center__favourite-question-one,
 .quiz-center__favourite-question-two {
   @include hei-wid(75px, 75px);
+  position: fixed;
 }
 
 .quiz-center__begin-quiz,
 .quiz-center__begin-quiz-quiz,
 .quiz-center__begin-quiz-answer,
 .quiz-center__submit-button {
-  position: absolute;
-  @include hei-wid-mar-rad(30px, 150px, 1rem 0rem 0rem -2.4rem, qopx);
+  position: fixed;
+  @include hei-wid-mar-rad(30px, 150px, 9.7rem 0rem 0rem -2.4rem, qopx);
   background-color: darkred;
   border-style: none;
   font-family: 'Source Serif Pro', serif;
@@ -34,19 +35,24 @@
 }
 
 .quiz-center__begin-quiz-answer {
-  margin: -5rem 0rem 0rem -2.4rem;
+  margin: -0.3rem 0rem 0rem -2.4rem;
 }
 
 .quiz-center__begin-quiz-quiz {
-  margin: -3rem 0rem 0rem -2.4rem;
+  margin: 9.7rem 0rem 0rem -2.4rem;
 }
 
 .quiz-center__submit-button {
-  margin: 12rem 0rem 0rem -2.2rem;
+  margin: 27.2rem 0rem 0rem -2.3rem;
+}
+
+.quiz-center__results {
+  position: fixed;
+  margin-top: 10rem;
 }
 
 .results__text {
-  margin: 6rem 0rem 0rem 0rem;
+  margin: 4.5rem 0rem 0rem 0rem;
   width: 39.6rem;
   font-size: 34px;
 }

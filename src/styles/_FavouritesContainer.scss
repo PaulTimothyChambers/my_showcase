@@ -16,7 +16,8 @@
   @include mar-fsize(-3rem 0rem 0rem -5.5rem, 48px);
 }
 
-.favourites__container {
+.favourites__container,
+.no-favourites__container {
   @include dis-flexdir(row);
   flex-wrap: wrap;
   width: 63rem;
@@ -27,4 +28,43 @@
   position: absolute;
   @include hei-wid(50px, 50px);
   margin: -2.8rem 0rem 0rem -9.3rem;
+}
+
+.no-favourites__missing {
+  position: fixed;
+  background-color: whitesmoke;
+  height: 166px;
+  padding: 10px;
+  font-size: 27px;
+  width: 717px;
+  z-index: 5;
+  margin: 7.4rem 0rem 0rem 22rem;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.overlay {
+  height: 203vh;
+  width: 100vw;
+  background-color: black;
+  opacity: 0.6;
+  position: absolute;
+  z-index: 3;
+  margin-top: -1.3rem
+}
+
+@keyframes bouncyarrow {
+  from { margin-left: 9.3rem; }
+  to   { margin-left: 10.2rem; }
+}
+
+.favourite-center__arrow {
+  height: 32px;
+  margin: 7.89rem 0rem 0rem 9.3rem;
+  position: fixed;
+  width: 154px;
+  z-index: 5;
+  animation: bouncyarrow 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }

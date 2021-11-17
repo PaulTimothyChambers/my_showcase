@@ -73,26 +73,32 @@ class QuizForm extends Component {
       <>
         {
           !this.state.optionOne &&
-            <
-            button
-              className="quiz-center__begin-quiz"
-              onClick={ () => this.newQuiz(this.props.quizQuestions) }
-            >Get New Questions</button>
+            <form>
+              <
+              button
+                className="quiz-center__begin-quiz"
+                onClick={ () => this.newQuiz(this.props.quizQuestions) }
+              >
+              Get New Questions</button>
+            </form>
         }
         {
           this.state.answer &&
-            <section className="quiz-center__results">
-              <
-              button
-                className="quiz-center__begin-quiz-answer"
-                onClick={ () => this.newQuiz(this.props.quizQuestions) }
-              >Get New Questions</button>
-              <h1 className="results__text">{ this.state.answer }</h1>
-              {
-                this.state.answerB &&
-                <h1 className="results__text-b">{ this.state.answerB }</h1>
-              }
-            </section>
+            <form>
+              <section className="quiz-center__results">
+                <
+                button
+                  className="quiz-center__begin-quiz-answer"
+                  onClick={ () => this.newQuiz(this.props.quizQuestions) }
+                >
+                Get New Questions</button>
+                <h1 className="results__text">{ this.state.answer }</h1>
+                {
+                  this.state.answerB &&
+                  <h1 className="results__text-b">{ this.state.answerB }</h1>
+                }
+              </section>
+            </form>
         }
         {
           this.state.optionOne &&
@@ -112,6 +118,7 @@ class QuizForm extends Component {
                       key={ Date.now() }
                       question={ this.state.optionOne }
                       id={ this.state.optionOne.id }
+                      order="one"
                       isActive={ this.state.oneIsActive }
                       toggleFavouriteIcon={ this.toggleFavouriteIcon }
                       option={ this.state.optionOne }
@@ -121,6 +128,7 @@ class QuizForm extends Component {
                       key={ Date.now() + 1 }
                       question={ this.state.optionTwo }
                       id={ this.state.optionTwo.id }
+                      order="two"
                       isActive={ this.state.twoIsActive }
                       toggleFavouriteIcon={ this.toggleFavouriteIcon }
                       option={ this.state.optionTwo }

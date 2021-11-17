@@ -6,33 +6,43 @@ form {
 }
 
 .quiz-center {
-  margin: 3rem 0rem 0rem 20rem;
+  margin: -2.7rem 0rem 0rem 20rem;
   font-family: 'Source Serif Pro', serif;
 }
 
 .quiz-center__header-text {
   margin: 0rem 0rem 0rem -5.5rem;
   font-size: 48px;
+  position: fixed;
 }
 
 .quiz-center__subtitle {
-  margin: -0.8rem 0rem 0rem 14.5rem;
+  margin: 2.8rem 0rem 0rem 14.5rem;
   font-size: 5.4px;
+  position: fixed;
 }
 
 .quiz-center__standby {
   width: 51rem;
-  margin: 1.7rem 0rem 0rem -2.5rem;
+  margin: 4.7rem 0rem 0rem -5.5rem;
   font-size: 17px;
+  position: fixed;
 }
 
-.quiz-center__option {
+.quiz-center__option-one {
   display: flex;
   flex-direction: row;
+  position: fixed;
+  margin: 11.7rem 0rem 0rem -4.2rem;
+}
+
+.quiz-center__option-two {
+  position: fixed;
+  margin: 18.7rem 0rem 0rem -4.2rem;
 }
 
 .quiz-center__icon-quiz-center {
-  position: absolute;
+  position: fixed;
   @include hei-wid(50px, 50px);
   margin: 0.2rem 0rem 0rem -9.1rem;
 }
