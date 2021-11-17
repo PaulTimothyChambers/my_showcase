@@ -1,4 +1,5 @@
 const apiEndpoint = 'https://my-better-showcase.herokuapp.com';
+// const apiEndpoint = 'http://localhost:3001';
 
 const checkResponse = (response) => {
   if (!response.ok) {
@@ -22,8 +23,14 @@ function loadQuestions() {
     .then(response => checkResponse(response))
 }
 
+// function loadImages() {
+//   return fetch(`${apiEndpoint}/api/v1/public/`)
+//     .then(response => checkResponse(response))
+// }
+
 export {
   loadHomeText,
   loadLearningCenterText,
   loadQuestions
+  // loadImages
 }

@@ -1,3 +1,5 @@
+@import '_mixins';
+
 main {
   @include hei-wid(200vh, 100vw);
   height: 200vh;
