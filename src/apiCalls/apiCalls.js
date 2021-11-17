@@ -23,14 +23,8 @@ function loadQuestions() {
     .then(response => checkResponse(response))
 }
 
-// function loadImages() {
-//   return fetch(`${apiEndpoint}/api/v1/public/`)
-//     .then(response => checkResponse(response))
-// }
-
 export {
   loadHomeText,
   loadLearningCenterText,
   loadQuestions
-  // loadImages
 }

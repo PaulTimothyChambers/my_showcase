@@ -29,15 +29,6 @@ class App extends Component {
       .catch(error => this.setState({ error: error.message }))
   }
 
-  // getAssets = (dataOne) => {
-  //   loadImages()
-  //   .then(data => console.log(data))
-      // .then(data => this.setState({
-      //   appTextElements: dataOne.appTextElements,
-      //   assets: data
-      // }))
-  // }
-
   favouriteQuestion = (option) => {
     const filteredFavourites = this.state.favouriteQuestions.filter(question => {
       return question.id === option.id
@@ -60,7 +51,7 @@ class App extends Component {
     const appTextElements = this.state.appTextElements;
     return (
       <main>
-        <img className="home-bg" src={ bg5 } />
+        <img className="home-bg" src={ bg5 } alt="a Japanese style mountain and sunset, with water below as the background" />
         <Routes>
           <Route exact path='/' element={
             <>
