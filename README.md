@@ -1,6 +1,6 @@
 # My Showcase
 
-- [Deployment Link](https://this-showcase-for-me.surge.sh/)
+- [Deployment Link](https://showcase_v6.surge.sh/)
 - [Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
 
 ## Contributors
