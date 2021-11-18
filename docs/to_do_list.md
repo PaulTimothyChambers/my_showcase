@@ -10,7 +10,7 @@
   * Create DOM elements with `.map()`, matching an array of key:value pairs with their corresponding, dynamically created HTML tag
 
 - [x] QuizCenter.js:
-  * ~~Move `import` statement on line 2 down to line 4 for code consistency within project~~
+  * Move `import` statement on line 2 down to line 4 for code consistency within project
 
 - [ ] QuizForm.js:
   * Rename property `(one)/(two)IsActive` to `(favOne)/(favTwo)IsActive`
@@ -22,7 +22,7 @@
   * Rename file to something more descriptive/empathetic, such as QuizInput.js or QuizFormInput.js
 
 - [ ] FavouritesContainer.js
-  * ~~Refactor `emptyFavs` to include unique `key` for each rendered `FavouriteCard`~~
+  * Refactor `emptyFavs` to include unique `key` for each rendered `FavouriteCard`
   * Create component that can dynamically render both versions of the `FavouritesContainer` (one with `favourites`, one without)
 
 - [ ] FavouriteCard.js:
