@@ -3,7 +3,7 @@ import React from 'react';
 import activeFavouriteIcon from '../quiz-assets/favourite-two.png';
 import inactiveFavouriteIcon from '../quiz-assets/favourite-one.png';
 
-const RadioSelect = ({ question, id, order, isActive, toggleFavouriteIcon, option, optionString }) => {
+const QuizInput = ({ question, id, order, isActive, toggleFavouriteIcon }) => {
 
   return (
     <div className={ `quiz-center__option-${order}` }>
@@ -20,7 +20,7 @@ const RadioSelect = ({ question, id, order, isActive, toggleFavouriteIcon, optio
             aria-label="button"
             className={ `quiz-center__favourite-question-${order}` }
             src={ inactiveFavouriteIcon }
-            onClick={ () => toggleFavouriteIcon(option, true, `${optionString}IsActive`) }
+            onClick={ () => toggleFavouriteIcon(question, true, `${order}IsActive`) }
           />
       }
       {
@@ -29,7 +29,7 @@ const RadioSelect = ({ question, id, order, isActive, toggleFavouriteIcon, optio
             aria-label="button"
             className={ `quiz-center__favourite-question-${order}` }
             src={ activeFavouriteIcon }
-            onClick={ () => toggleFavouriteIcon(option, false, `${optionString}IsActive`) }
+            onClick={ () => toggleFavouriteIcon(question, false, `${order}IsActive`) }
           />
       }
       <label
@@ -43,4 +43,4 @@ const RadioSelect = ({ question, id, order, isActive, toggleFavouriteIcon, optio
 
 }
 
-export default RadioSelect;
+export default QuizInput;

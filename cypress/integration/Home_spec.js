@@ -12,13 +12,12 @@ describe('Home Page', () => {
   }
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000/');
+    cy.intercept('https://my-better-showcase.herokuapp.com/api/v1/home', {
+      text
+    }).visit('https://showcase_v7.surge.sh');
   });
 
   it('Should display text data received from the API', () => {
-    cy.intercept('http://localhost:3001/api/v1/home', {
-      text
-    })
     cy.get('p')
       .should('contain', `${text.aboutAuthor}`)
       .should('contain', `${text.purpose}`)

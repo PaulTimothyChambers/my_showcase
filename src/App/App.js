@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import Nav from './Nav/Nav';
+import Nav from '../Nav/Nav';
 import Home from '../Home/Home';
 import QuizCenter from '../QuizCenter/QuizCenter';
 import FavouritesContainer from '../FavouritesContainer/FavouritesContainer';
@@ -12,15 +12,10 @@ import { loadHomeText } from '../apiCalls/apiCalls';
 import bg5 from '../Home/home-assets/background-five.0e95ebd5.png'
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      appTextElements: {},
-      favouriteQuestions: [],
-      assets: null,
-      error: null
-    }
-    this.favouriteQuestion = this.favouriteQuestion.bind(this);
+  state = {
+    appTextElements: {},
+    favouriteQuestions: [],
+    error: null
   }
 
   componentDidMount() {
@@ -29,7 +24,7 @@ class App extends Component {
       .catch(error => this.setState({ error: error.message }))
   }
 
-  favouriteQuestion = (option) => {
+  favouriteAQuestion = (option) => {
     const filteredFavourites = this.state.favouriteQuestions.filter(question => {
       return question.id === option.id
     });
@@ -48,50 +43,69 @@ class App extends Component {
   }
 
   render() {
-    const appTextElements = this.state.appTextElements;
+    const error = this.state.error
+    const text = this.state.appTextElements
+    const makeFav = this.favouriteAQuestion
+    const deleteFav = this.deleteFavourite
+    const favQuestions = this.state.favouriteQuestions
     return (
       <main>
-        <img className="home-bg" src={ bg5 } alt="a Japanese style mountain and sunset, with water below as the background" />
-        <Routes>
-          <Route exact path='/' element={
+        {
+          error &&
             <>
-              {
-                appTextElements &&
-                  <>
+              <img className="home-bg" src={ bg5 } alt="a Japanese style mountain and sunset, with water below as the background" />
+              <div className="error-message">
+                { `${error}` }
+              </div>
+            </>
+        }
+        {
+          !error &&
+            <>
+              <img className="home-bg" src={ bg5 } alt="a Japanese style mountain and sunset, with water below as the background" />
+              <Routes>
+                <Route exact path='/' element={
+                  <section className="home-main">
                     <Nav />
-                    <Home appTextElements={ this.state.appTextElements }/>
+                    <Home appTextElements={ text }/>
+                  </section>
+                } />
+
+                <Route exact path='/learning_center' element={
+                  <section className="learning-center-main">
+                    <Nav />
+                    <LearningCenter />
+                  </section>
+                } />
+
+                <Route exact path='/quiz_center' element={
+                  <section className="quiz-center-main">
+                    <Nav />
+                    <QuizCenter
+                      favouriteQuestion={ makeFav }
+                      deleteFavourite={ deleteFav }
+                    />
+                  </section>
+                } />
+
+                <Route exact path='/favourites' element={
+                  <section className="favourites-main">
+                    <Nav />
+                    <FavouritesContainer
+                      favouriteQuestions={ favQuestions }
+                      deleteFavourite={ deleteFav }
+                    />
+                  </section>
+                } />
+
+                <Route path="*" element={
+                  <>
+                    <PageNotFound />
                   </>
-              }
+                } />
+              </Routes>
             </>
-          } />
-
-          <Route exact path='/learning_center' element={
-            <>
-              <Nav />
-              <LearningCenter />
-            </>
-          } />
-
-          <Route exact path='/quiz_center' element={
-            <>
-              <Nav />
-              <QuizCenter favouriteQuestion={ this.favouriteQuestion } deleteFavourite={ this.deleteFavourite } />
-            </>
-          } />
-
-          <Route exact path='/favourites' element={
-            <section className="favourites-main">
-              <Nav />
-              <FavouritesContainer favouriteQuestions={ this.state.favouriteQuestions } deleteFavourite={ this.deleteFavourite } />
-            </section>
-          } />
-
-          <Route path="*" element={
-            <>
-              <PageNotFound />
-            </>
-          } />
-        </Routes>
+        }
       </main>
     )
   }

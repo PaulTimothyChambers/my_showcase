@@ -1,7 +1,7 @@
 import React from 'react';
-import FavouriteCard from './FavouriteCard/FavouriteCard';
+import FavouriteCard from '../FavouriteCard/FavouriteCard';
 
-import favouritesIcon from '../App/Nav/nav-assets/favourites-icon.png';
+import favouritesIcon from '../Nav/nav-assets/favourites-icon.png';
 import arrow from './fav-assets/arrow.png';
 
 const FavouritesContainer = ({ favouriteQuestions, deleteFavourite }) => {
@@ -17,14 +17,25 @@ const FavouritesContainer = ({ favouriteQuestions, deleteFavourite }) => {
     )
   })
 
-  const arr = Array(9)
-  const emptyFavs = arr.fill(
-    <FavouriteCard
-      key={ Date.now() + 1}
-      favourite={ <img className="favourites__icon-favourites" src={ favouritesIcon } alt="an icon of a star respresenting the favourites page" /> }
-      id="1"
-    />
-  )
+  const emptyFavs = Array(9).fill('ele');
+
+  let count = 0;
+  const noFavs = emptyFavs.map(ele => {
+    count++
+    return (
+      <FavouriteCard
+        key={ Date.now() + count }
+        favourite={
+          <img
+            className="favourites__icon-favourites"
+            src={ favouritesIcon }
+            alt="an icon of a star respresenting the favourites page"
+          />
+        }
+        id={ `${ count }` }
+      />
+    )
+  })
 
   return (
     <>
@@ -35,7 +46,7 @@ const FavouritesContainer = ({ favouriteQuestions, deleteFavourite }) => {
               <img className="favourite-center__icon-favourite-center" src={ favouritesIcon } alt="an icon of a star respresenting the favourites page" />
               <h1 className="favourites__title">FAVOURITES</h1>
               <div className="no-favourites__container">
-                { emptyFavs }
+                { noFavs }
               </div>
             </section>
             <h2 className="no-favourites__missing">It looks like you haven't favourited any questions, yet. You can favourite questions you come across while taking quizzes in the Quiz Center (third tab down from the top). Once you've done so, any questions you have favourited will show up on this page!</h2>
