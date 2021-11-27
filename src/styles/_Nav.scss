@@ -44,6 +44,15 @@
   text-decoration: none;
 }
 
+.navers:hover {
+  margin-left: -6rem;
+}
+
+.active {
+  background-color: darkred;
+  margin-left: -6rem;
+}
+
 .nav-tabs__home,
 .nav-tabs__learning-center,
 .nav-tabs__quiz-center,
@@ -81,20 +90,11 @@
   margin: 7px 0px 0px 19px;
 }
 
-.active {
-  background-color: darkred;
-  margin-left: -6rem;
-}
-
-.navers:hover {
-  margin-left: -6rem;
-}
-
 .nav__back {
   position: fixed;
   @include hei-wid(93px, 165px);
   margin-top: -20px;
   margin-left: 289px;
-  opacity: 0.4;
+  opacity: 0.8;
   z-index: -1;
 }

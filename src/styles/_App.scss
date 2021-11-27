@@ -1,15 +1,27 @@
 @import '_mixins';
 
-main {
+.home-main,
+.learning-center-main {
   @include hei-wid(200vh, 100vw);
-  height: 200vh;
-  width: 100vw;
   margin-top: -1.7rem;
   background-color: #FCFDFD;
 }
 
+.learning-center-main {
+  margin-top: -2.7rem;
+}
+
+.quiz-center-main,
+.favourites-main {
+  height: 100%;
+}
+
+.favourites-main {
+  margin-top: 1rem;
+}
+
 .home-bg {
   position: fixed;
-  opacity: 0.15;
+  opacity: 0.05;
   z-index: 0;
 }
