@@ -1,6 +1,6 @@
 import React from 'react';
 
-import bg1 from '../fav-assets/background-four.6159a7b8.png';
+import bg1 from '../FavouritesContainer/fav-assets/background-four.6159a7b8.png';
 
 const FavouriteCard = ({ favourite, id, deleteFavourite, favouritesIcon }) => {
 
@@ -14,8 +14,7 @@ const FavouriteCard = ({ favourite, id, deleteFavourite, favouritesIcon }) => {
         favourite &&
           <>
             <p className="saved-question__question">{ favourite }</p>
-            <
-            button
+            <button
               className="saved-question__delete-question"
               onClick={ () => deleteFavourite(id) }
             >

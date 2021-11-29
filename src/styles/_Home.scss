@@ -13,57 +13,112 @@
 }
 
 .welcome-text__logo {
+  background-color: rgba(0, 0, 250, 0.2);
+  position: absolute;
   height: 10rem;
+  margin: -18px;
+  z-index: 0;
+}
+
+.welcome-text__title-two {
+  margin: 8.1rem 0rem 0rem 28rem;
+  font-size: 56px;
 }
 
 .welcome-text__author {
-  @include pos-mar(-15rem 0rem 0rem 51.8rem);
+  @include pos-mar(-18rem 0rem 0rem 51.8rem);
   height: 27rem;
   border-radius: 2rem;
   z-index: 1;
 }
 
 .author-about__header {
-  @include pos-mar(12.7rem 0rem 0rem 53rem);
+  @include pos-mar(9.7rem 0rem 0rem 53rem);
 }
 
 .author-about__body {
-  @include pos-mar(14.6rem 0rem 0rem 53.2rem);
+  @include pos-mar(11.6rem 0rem 0rem 53.2rem);
   width: 14rem;
   font-size: 13px;
   text-align: center;
 }
 
-.welcome-text__title-two {
-  margin: -1rem 0rem 0rem 28rem;
-  font-size: 56px;
-}
-
-.welcome-text__purpose {
+.top-card__purpose {
   @include marlef-marrig(25px, 325px);
   font-size: 15px;
 }
 
-.welcome-text__site-guide,
-.welcome-text__call-to-action {
+.top-card__site-guide,
+.bottom-card__call-to-action {
   @include marlef-marrig(10px, 33px);
   font-size: 19px;
 }
 
-.welcome-text__call-to-action {
+.bottom-card__call-to-action {
   margin-top: -2rem;
 }
 
-.welcome-text__site-guide-nav {
+.top-card__site-guide-nav,
+.middle-card__site-guide-nav,
+.bottom-card__site-guide-nav {
   @include martop-fsize(3rem, 36px);
 }
 
-.welcome-text__tab {
+.top-card__tab,
+.middle-card__tab,
+.bottom-card__tab {
   @include martop-fsize(-1.7rem, 16px);
   @include marlef-marrig(25px, 45px);
 }
 
-.welcome-text__icon {
+.top-card__icon,
+.middle-card__icon,
+.bottom-card__icon {
   @include pos-mar(-5.3rem 0rem 0rem -3.5rem);
   @include hei-wid(50px, 50px);
+  z-index: 3;
+}
+
+.top-card__purpose {
+  @include martop-fsize(3rem, 15px);
+  width: 49rem;
+}
+
+.top-card__bg  {
+  position: absolute;
+  opacity: 0.28;
+  height: 13.3rem;
+  width: 55.1rem;
+  margin-left: -4.1rem;
+  margin-top: 4.2rem;
+  z-index: 2;
+}
+
+.top-card__bg-7 {
+  position: absolute;
+  margin-top: -8.5rem;
+  width: 29rem;
+  opacity: 0.2;
+  margin-left: 17.5rem;
+  height: 8rem;
+}
+
+.top-card__bg-11 {
+  position: fixed;
+  margin-left: -14.5rem;
+  margin-top: -20.8rem;
+  height: 15rem;
+  width: 10.2rem;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+.top-card__bg-12 {
+  position: fixed;
+  margin-left: -0.8rem;
+  margin-top: 15.3rem;
+  height: 50rem;
+  width: 10.2rem;
+  opacity: 0.4;
+  z-index: -1;
 }

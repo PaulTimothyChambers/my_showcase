@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import { loadLearningCenterText } from '../apiCalls/apiCalls';
 
-import learningIcon from '../App/Nav/nav-assets/learning-icon.png';
+import learningIcon from '../Nav/nav-assets/learning-icon.png';
 
 class LearningCenter extends Component {
   state = {
-    learningCenterTextElements: {},
+    learningCenterTextElements: [],
     error: null
   }
 
@@ -16,50 +16,65 @@ class LearningCenter extends Component {
       .catch(error => this.setState({ error: error.message }))
   }
 
+  allElements = () => {
+    const mappedTexts = this.state.learningCenterTextElements.map((ele, i) => {
+      if (i === 0 || i === 5 || i ===  11 || i === 12) {
+        return (
+          this.renderTextElement('def', ele, i)
+        )
+
+      } else if (i === 16) {
+        return (
+          this.renderTextElement('tips-title', ele, i)
+        )
+
+      } else if (i === 17 || i === 18 || i === 19) {
+        return (
+          this.renderTextElement('tips', ele, i)
+        )
+
+      } else if (i === 20) {
+        return (
+          this.renderTextElement('final-thoughts-title', ele, i)
+        )
+
+      } else if (i === 21|| i === 22 || i === 23 || i === 24 || i === 25) {
+        return (
+          this.renderTextElement('final-thoughts', ele, i)
+        )
+
+      } else {
+        return (
+          this.renderTextElement('def-indent', ele, i)
+        )
+      }
+    })
+    return mappedTexts
+  }
+
+  renderTextElement = (className, ele, i)  => {
+    return (
+      <p
+        key={ Date.now() + i }
+        className={ `learning-center__${className}` }
+      >{ ele }</p>
+    )
+  }
+
   render() {
-    const learningCenterTextElements = this.state.learningCenterTextElements
     return (
       <section className="learning-center">
         {
-          learningCenterTextElements &&
-            <>
-              <article>
-                <img className="learning-center__icon-learning-center" src={ learningIcon } alt="an icon with a light bulb on it repsenting the learning center" />
-                <h1 className="learning-center__def-title">HOW TO ASK OPEN-ENDED QUESTIONS</h1>
-                <p className="learning-center__def-one">{ learningCenterTextElements.definitionOne }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionTwo }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionThree }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionFour }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionFive }</p>
-                <p className="learning-center__def">{ learningCenterTextElements.definitionSix }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionSeven }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionEight }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionNine }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionTen }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionEleven }</p>
-                <p className="learning-center__def">{ learningCenterTextElements.definitionTwelve }</p>
-                <p className="learning-center__def">{ learningCenterTextElements.definitionThirteen }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionFourteen }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionFifteen }</p>
-                <p className="learning-center__def-indent">{ learningCenterTextElements.definitionSixteen }</p>
-              </article>
-
-              <article>
-                <h1 className="learning-center__tips-title">SOME HELPFUL TIPS:</h1>
-                <p className="learning-center__tips">{ learningCenterTextElements.tipsOne }</p>
-                <p className="learning-center__tips">{ learningCenterTextElements.tipsTwo }</p>
-                <p className="learning-center__tips">{ learningCenterTextElements.tipsThree }</p>
-              </article>
-
-              <article>
-                <h1 className="learning-center__final-thoughts-title">FINAL THOUGHTS:</h1>
-                <p className="learning-center__final-thoughts">{ learningCenterTextElements.finalThoughtsOne }</p>
-                <p className="learning-center__final-thoughts">{ learningCenterTextElements.finalThoughtsTwo }</p>
-                <p className="learning-center__final-thoughts">{ learningCenterTextElements.finalThoughtsThree }</p>
-                <p className="learning-center__final-thoughts">{ learningCenterTextElements.finalThoughtsFour }</p>
-                <p className="learning-center__final-thoughts">{ learningCenterTextElements.finalThoughtsFive }</p>
-              </article>
-            </>
+          this.state.learningCenterTextElements &&
+            <article>
+              <img
+                className="learning-center__icon-learning-center"
+                src={ learningIcon }
+                alt="an icon with a light bulb on it repsenting the learning center"
+              />
+              <h1 className="learning-center__def-title">HOW TO ASK OPEN-ENDED QUESTIONS</h1>
+              { this.allElements() }
+            </article>
         }
       </section>
     )
@@ -67,3 +82,42 @@ class LearningCenter extends Component {
 }
 
 export default LearningCenter;
+
+// let expr = i + 1
+// switch(expr) {
+  //   case 1 || 6 || 12 || 13:
+  //     console.log('first')
+  //     return (
+    //       this.renderTextElement('def', ele, i)
+    //     )
+    //     break
+    //   case 17:
+    //     console.log('second')
+    //     return (
+      //       this.renderTextElement('tips-title', ele, i)
+      //     )
+      //     break
+      //   case 18 || 19 || 20:
+      //     console.log('third')
+      //     return (
+        //       this.renderTextElement('tips', ele, i)
+        //     )
+        //     break
+        //   case 21:
+        //     console.log('fourth')
+        //     return (
+          //       this.renderTextElement('final-thoughts-title', ele, i)
+          //     )
+          //     break
+          //   case 22 || 23 || 24 || 25 || 26:
+          //     console.log('fifth')
+          //     return (
+            //       this.renderTextElement('final-thoughts', ele, i)
+            //     )
+            //   default:
+            //     console.log('six')
+            //     return (
+              //       this.renderTextElement('def-indent', ele, i)
+              //     )
+              //     break
+              // }

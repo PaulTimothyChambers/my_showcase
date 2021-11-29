@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RadioSelect from './RadioSelect/RadioSelect';
+import QuizInput from './QuizInput/QuizInput';
 
 class QuizForm extends Component {
   state = {
@@ -57,10 +57,10 @@ class QuizForm extends Component {
     }
   }
 
-  toggleFavouriteIcon = (option, bool, isActive) => {
-    this.setState({ [isActive]: bool });
+  toggleFavouriteIcon = (option, bool, activeIcon) => {
+    this.setState({ [activeIcon]: bool });
 
-    if (!this.state[isActive]) {
+    if (!this.state[activeIcon]) {
       this.props.favouriteQuestion(option);
 
     } else {
@@ -69,70 +69,70 @@ class QuizForm extends Component {
   }
 
   render() {
+    const optionOne = this.state.optionOne
+    const optionTwo = this.state.optionTwo
+    const questions = this.props.quizQuestions
+    const answer = this.state.answer
+    const answerB = this.state.answerB
+    const oneIsActive = this.state.oneIsActive
+    const twoIsActive = this.state.twoIsActive
     return (
       <>
         {
-          !this.state.optionOne &&
+          !optionOne &&
             <form>
-              <
-              button
+              <button
                 className="quiz-center__begin-quiz"
-                onClick={ () => this.newQuiz(this.props.quizQuestions) }
+                onClick={ () => this.newQuiz(questions) }
               >
               Get New Questions</button>
             </form>
         }
         {
-          this.state.answer &&
+          answer &&
             <form>
               <section className="quiz-center__results">
-                <
-                button
+                <button
                   className="quiz-center__begin-quiz-answer"
-                  onClick={ () => this.newQuiz(this.props.quizQuestions) }
+                  onClick={ () => this.newQuiz(questions) }
                 >
                 Get New Questions</button>
-                <h1 className="results__text">{ this.state.answer }</h1>
+                <h1 className="results__text">{ answer }</h1>
                 {
-                  this.state.answerB &&
-                  <h1 className="results__text-b">{ this.state.answerB }</h1>
+                  answerB &&
+                  <h1 className="results__text-b">{ answerB }</h1>
                 }
               </section>
             </form>
         }
         {
-          this.state.optionOne &&
+          optionOne &&
             <>
               {
-                !this.state.answer &&
-                  <
-                  form
-                    onSubmit={ event => this.checkAnswers(event, this.state.optionOne, this.state.optionTwo) }
-                  >
-                    <
-                    button
+                !answer &&
+                  <form onSubmit={ event => this.checkAnswers(event, optionOne, optionTwo) }>
+                    <button
                       className="quiz-center__begin-quiz-quiz"
-                      onClick={ () => this.newQuiz(this.props.quizQuestions) }
-                    >Get New Questions</button>
-                    <RadioSelect
+                      onClick={ () => this.newQuiz(questions) }
+                    >
+                    Get New Questions</button>
+                    <QuizInput
                       key={ Date.now() }
-                      question={ this.state.optionOne }
-                      id={ this.state.optionOne.id }
+                      question={ optionOne }
+                      id={ optionOne.id }
                       order="one"
-                      isActive={ this.state.oneIsActive }
+                      isActive={ oneIsActive }
                       toggleFavouriteIcon={ this.toggleFavouriteIcon }
-                      option={ this.state.optionOne }
-                      optionString="one"
+                      option={ optionOne }
                     />
-                    <RadioSelect
+                    <QuizInput
                       key={ Date.now() + 1 }
-                      question={ this.state.optionTwo }
-                      id={ this.state.optionTwo.id }
+                      question={ optionTwo }
+                      id={ optionTwo.id }
                       order="two"
-                      isActive={ this.state.twoIsActive }
+                      isActive={ twoIsActive }
                       toggleFavouriteIcon={ this.toggleFavouriteIcon }
-                      option={ this.state.optionTwo }
-                      optionString="two"
+                      option={ optionTwo }
                     />
                     <input
                       type="submit"
